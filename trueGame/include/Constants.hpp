@@ -1,0 +1,23 @@
+#pragma once
+
+constexpr size_t FIELD_WIDTH = 20;
+constexpr size_t FIELD_HEIGHT = 10;
+
+constexpr int DOWN = 258;
+constexpr int UP = 259;
+constexpr int LEFT = 260;
+constexpr int RIGHT = 261;
+constexpr int ENTER = '\n';
+
+constexpr char FLOOR = ' ';
+constexpr char WALL = '#';
+constexpr char PLAYER = 'K';
+constexpr char ENEMY = 'X';
+
+constexpr int PL_HEALTH = 5;
+constexpr int PL_DAMAGE = 5;
+constexpr int MELEE_MODE = 0;
+constexpr int RANGE_MODE = 0;
+
+constexpr int EN_HEALTH = 5;
+constexpr int EN_DAMAGE = 1;
