@@ -36,7 +36,7 @@ void Player::handleInput(std::vector<std::vector<Ceil>>& ceils, int ch, const Sc
         y = nextY;
         ceils[y - screen->yMax/2 + height/2][x - screen->xMax/2 + width/2].setEntity(shared_from_this());
     } else if (ceils[nextY - screen->yMax/2 + height/2][nextX - screen->xMax/2 + width/2].getEntity()->getType() == Entity::Type::ENEMY) {
-        startBattle(screen, ceils, shared_from_this(), std::static_pointer_cast<Enemy>(ceils[nextY - screen->yMax/2 + height/2][nextX - screen->xMax/2 + width/2].getEntity()));
+        startBattle(screen, ceils, std::static_pointer_cast<Player>(shared_from_this()), std::static_pointer_cast<Enemy>(ceils[nextY - screen->yMax/2 + height/2][nextX - screen->xMax/2 + width/2].getEntity()));
     }
 }
 

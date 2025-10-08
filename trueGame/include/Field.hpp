@@ -21,5 +21,5 @@ public:
     void spawnPlayer();
     void spawnEnemy();
     
-    void update(int ch);
+    bool update(int ch);
 };

@@ -1,7 +1,7 @@
 CMakeFiles/main.dir/src/Utils.cpp.o: \
- /home/con2222/cppgame/trueGame/src/Utils.cpp \
+ /home/con2222/repos/ncurses-game/trueGame/src/Utils.cpp \
  /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/stdc-predef.h \
- /home/con2222/cppgame/trueGame/include/Utils.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Utils.hpp \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/string \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/requires_hosted.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/x86_64-unknown-linux-gnu/bits/c++config.h \

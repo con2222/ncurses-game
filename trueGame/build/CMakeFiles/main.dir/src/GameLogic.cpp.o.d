@@ -1,10 +1,10 @@
 CMakeFiles/main.dir/src/GameLogic.cpp.o: \
- /home/con2222/cppgame/trueGame/src/GameLogic.cpp \
+ /home/con2222/repos/ncurses-game/trueGame/src/GameLogic.cpp \
  /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/stdc-predef.h \
- /home/con2222/cppgame/trueGame/include/GameLogic.hpp \
- /home/con2222/cppgame/trueGame/include/Player.hpp \
- /home/con2222/cppgame/trueGame/include/Entity.hpp \
- /home/con2222/cppgame/trueGame/include/ScreenSize.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/GameLogic.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Player.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Entity.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/ScreenSize.hpp \
  /nix/store/0cjxn9v10y6ywv9yfdb50dzr84xhpxhl-ncurses-6.5-dev/include/curses.h \
  /nix/store/0cjxn9v10y6ywv9yfdb50dzr84xhpxhl-ncurses-6.5-dev/include/ncurses_dll.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stdint.h \
@@ -50,7 +50,7 @@ CMakeFiles/main.dir/src/GameLogic.cpp.o: \
  /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/wchar2.h \
  /nix/store/0cjxn9v10y6ywv9yfdb50dzr84xhpxhl-ncurses-6.5-dev/include/unctrl.h \
  /nix/store/0cjxn9v10y6ywv9yfdb50dzr84xhpxhl-ncurses-6.5-dev/include/curses.h \
- /home/con2222/cppgame/trueGame/include/Ceil.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Ceil.hpp \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/memory \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/memoryfwd.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/x86_64-unknown-linux-gnu/bits/c++config.h \
@@ -153,7 +153,7 @@ CMakeFiles/main.dir/src/GameLogic.cpp.o: \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/backward/auto_ptr.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/pstl/glue_memory_defs.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/pstl/execution_defs.h \
- /home/con2222/cppgame/trueGame/include/Constants.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Constants.hpp \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/vector \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/stl_vector.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/initializer_list \
@@ -163,9 +163,9 @@ CMakeFiles/main.dir/src/GameLogic.cpp.o: \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/memory_resource.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/cstddef \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/uses_allocator_args.h \
- /home/con2222/cppgame/trueGame/include/LivingEntity.hpp \
- /home/con2222/cppgame/trueGame/include/Enemy.hpp \
- /home/con2222/cppgame/trueGame/include/Utils.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/LivingEntity.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Enemy.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Utils.hpp \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/string \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/char_traits.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/localefwd.h \
@@ -210,73 +210,5 @@ CMakeFiles/main.dir/src/GameLogic.cpp.o: \
  /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/error_t.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/charconv.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/basic_string.tcc \
- /home/con2222/cppgame/trueGame/include/Color.hpp \
- /home/con2222/cppgame/trueGame/include/Floor.hpp \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/iostream \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/ostream \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/ios \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/ios_base.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/locale_classes.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/locale_classes.tcc \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/system_error \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/x86_64-unknown-linux-gnu/bits/error_constants.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/stdexcept \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/streambuf \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/streambuf.tcc \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/basic_ios.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/locale_facets.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/cwctype \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/wctype.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/wctype-wchar.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/x86_64-unknown-linux-gnu/bits/ctype_base.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/streambuf_iterator.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/x86_64-unknown-linux-gnu/bits/ctype_inline.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/locale_facets.tcc \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/basic_ios.tcc \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/ostream.tcc \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/istream \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/istream.tcc \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/sstream \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/sstream.tcc \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/unistd.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/posix_opt.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/environments.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/confname.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/getopt_posix.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/getopt_core.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/unistd.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/unistd-decl.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/unistd_ext.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/linux/close_range.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/sys/wait.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/signal.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/signum-generic.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/signum-arch.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/sig_atomic_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/siginfo_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/__sigval_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/siginfo-arch.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/siginfo-consts.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/siginfo-consts-arch.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/sigval_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/sigevent_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/sigevent-consts.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/sigaction.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/sigcontext.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/stack_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/sys/ucontext.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/sigstack.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/sigstksz.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/ss_flags.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/struct_sigstack.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/sigthread.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/signal_ext.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/idtype_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/fcntl.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/fcntl.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/fcntl-linux.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/struct_iovec.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/linux/falloc.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/stat.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/struct_stat.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/fcntl2.h
+ /home/con2222/repos/ncurses-game/trueGame/include/Color.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Floor.hpp

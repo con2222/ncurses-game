@@ -34,16 +34,20 @@ void Game::start() {
     field.draw();
     int ch;
 
+    bool playerIsAlive = 1;
+
     while (true) {
         ch = getch();
         if (ch == 'q') {break;}
-        field.update(ch);
 
+        playerIsAlive = field.update(ch);
+
+        if (playerIsAlive == 0) {
+            break;
+        }
         clear();
 
         field.draw();
-
-
 
         refresh();
     }

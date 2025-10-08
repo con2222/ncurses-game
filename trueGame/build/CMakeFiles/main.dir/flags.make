@@ -4,7 +4,7 @@
 # compile CXX with /nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/con2222/cppgame/trueGame/include
+CXX_INCLUDES = -I/home/con2222/repos/ncurses-game/trueGame/include
 
 CXX_FLAGS = -std=gnu++17
 

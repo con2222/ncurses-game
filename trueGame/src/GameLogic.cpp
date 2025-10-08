@@ -4,158 +4,87 @@
 #include <Color.hpp>
 #include <Floor.hpp>
 #include <ncurses.h>
-#include <iostream>
-#include <locale.h>
-#include <sstream>
-#include <string>
-#include <cstdlib>
-#include <unistd.h>   // для fork, exec, getpid
-#include <sys/wait.h> // для waitpid
-#include <signal.h>   // для kill
-#include <fcntl.h>
-//int startBattle(ScreenSize* screen, std::shared_ptr<Player> player, std::shared_ptr<Enemy> enemy)
 
-const char* ascii_art = R"(
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⢰⠀⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢡⠠⠀⠀⡇⣯⡄⢀⢀⢰⠢⡀⢣⠘⡄⠀⢀⡀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⢂⠑⡀⡇⢿⠐⡈⠪⠄⣧⣐⣄⠿⡱⢄⠀⢺⠤⢀⢰⣀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡤⣀⠀⠑⢦⡤⢤⣥⡬⢧⠼⢧⠬⠯⡙⣷⣖⠧⡙⣒⣧⠵⣀⠩⣢⢿⣌⢓⢄⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⢄⠳⡌⠙⠡⣍⡓⠦⣌⠭⢬⣤⣡⠐⢎⢼⠷⢞⣼⣬⣱⣽⣲⢫⢻⢕⣍⠣⡱⡽⡲⡠
-⠀⠀⠀⠀⠀⠀⠀⠀⡀⢕⡢⢈⠣⡾⢌⡃⠠⢘⣧⣋⠙⠦⡭⢭⡝⠶⣳⠷⢮⣽⣶⣷⣭⣹⢷⡷⣿⣯⣷⡨⢶⣿⣵⢌⡦⡀⠀
-⠀⠀⠀⠀⠀⢀⢈⠢⣹⣢⣨⠖⢍⡒⠶⠨⣡⣒⣷⣶⣭⡗⣚⠚⡭⠝⠴⠦⣤⠍⣛⣓⢯⣬⣿⣽⣽⡿⣿⣿⣮⣾⡽⢷⣲⢱⡀⢀
-⠀⠀⠀⠀⠀⠈⢋⢼⢽⢯⢦⡙⣓⠞⡛⣳⣙⣾⣭⣧⣄⣀⠤⠐⠒⠉⠊⠙⢛⣿⣟⣯⣾⣭⣻⣮⣻⣿⣿⣿⣿⣿⣦⠘⣞⡌⡿⣼
-⠀⠀⠀⠀⠀⠀⠀⣱⢻⡔⢤⣉⣐⣤⣋⣥⡤⣽⡷⠒⠌⡀⢀⣠⡤⠚⢈⣉⡴⠯⠛⠻⢃⢛⣻⣿⣷⣿⣿⡿⣿⣿⣿⣧⣿⣶⣲⢻
-⠀⠀⠀⠀⠀⠀⠀⠀⠑⠺⢅⣝⣛⣥⣍⡁⢀⣉⣠⣴⠞⣋⣽⠡⢴⠾⣋⡡⢄⣲⣈⠭⠙⠛⣻⣿⣿⣷⣿⣿⣽⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠒⡤⢤⢶⠚⣋⡩⢤⣖⣍⣉⣾⢋⣬⣛⣷⡿⠋⣨⣕⣦⠓⠁⠀⣀⠴⢎⣉⠵⢛⣻⣩⣽⣿⣿⣿⣿⣿⣿⣋⣟
-⠀⠀⠀⠀⠀⠀⠀⠀⣴⣙⡽⣯⡝⣋⣡⣴⣤⢿⢡⣿⣿⡿⢊⣤⠾⠋⡩⠂⢀⣴⡫⠕⣊⠕⢁⠔⢁⡼⠋⠁⡁⣸⣿⣿⣿⣿⣛⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⡇⠀⠀⠀⢠⡀⢸⡻⡴⣷⣩⡟⠩⡠⢊⡠⣰⠟⢁⠄⠊⢀⡴⠋⠔⠉⠀⡘⢰⢀⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢡⢠⡄⠀⠀⡘⢩⠗⢪⢋⡟⣐⠥⠶⣹⠼⠑⢈⣀⣴⠜⢁⠀⠀⢠⡕⣽⠀⣟⣾⣿⢻⢻⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠚⡁⠋⠀⠠⡦⠢⠴⢥⣎⣜⣡⣶⣾⣶⣾⣿⣭⣽⣠⠴⢃⣔⣪⡞⣱⣷⠸⣼⣟⣧⣟⣼⣟⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡟⣷⡀⠀⠀⠀⣧⢠⡔⢋⣡⣾⣿⣿⢻⡏⠛⢻⣿⡟⢁⣴⣫⢻⣿⣲⣿⣾⡀⣷⣛⡟⣬⣿⢹⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⡾⣛⠻⢿⣦⠀⠀⠈⠈⢡⡜⣿⡿⠟⡿⠃⠀⣄⢳⣿⡿⣿⢿⡿⣿⣽⣿⣿⡿⣧⣿⣿⣷⣿⠛⢸⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣡⠻⡷⣦⡿⠆⠀⠀⢠⣦⠀⢸⡅⠰⠃⠘⣦⡾⣧⡏⡄⢣⡄⣀⣿⣛⣬⡅⣶⣿⣿⣿⣿⢹⡄⣻⣿⣯⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⡠⠃⠀⢧⠀⣳⡀⠀⢠⣾⡿⠆⢈⣣⠀⠀⠀⡞⠃⠻⢀⠀⢾⣧⣉⣛⣉⣤⣶⣿⡟⠸⡌⢾⠀⣣⣿⡏⢫⡿
-⠀⠀⠀⠀⠀⠀⠀⣾⣀⠀⠀⠙⠃⠘⠃⠠⣼⡇⠀⠀⢨⡖⠀⠀⠀⠁⠀⠀⠈⠁⠈⠻⢿⣿⣿⣿⠟⡹⠶⠁⡓⡘⣆⠿⠡⢠⡏⡿
-⠀⠀⠀⠀⠀⠀⠀⠈⠺⢗⣦⣄⣀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠤⠀⠀⠀⠀⣫⣿⣿⣿⠀⢧⢸⠀⡿⢰⢣⢸⡇⡜⣸⣼
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⢮⣿⡟⡿⣿⡿⣿⡿⣿⠿⢻⡿⠟⢉⠀⠔⠁⠀⠀⠀⢿⣹⡟⣿⡄⣽⣿⢃⢣⢸⣮⢿⢼⢡⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⢻⣧⣵⣾⣾⣿⠿⢻⠇⢀⠔⠁⠀⡜⠐⠀⠄⢐⣿⣎⣿⡹⢷⡄⣿⣿⣼⢿⡟⢹⢀⣡⡽⣽
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⣠⡾⢁⣴⣏⡠⠊⠀⡠⠊⠀⠀⣄⣀⣼⣇⠫⢢⡧⢘⣧⡽⣬⢷⡞⡷⡠⢳⢾⠣⡼
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠖⠁⠀⢀⠟⡹⠋⠁⣴⠁⠀⠀⠀⣸⡟⠀⢦⣁⣬⢡⠷⣫⢵⡘⠸⠇⡷⠯⡍⠸⡔⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⡄⠀⠀⣼⣚⣁⣀⣞⣉⣀⣀⣴⣯⣾⣧⣴⣾⣿⣿⠊⠀⠈⠃⠹⠃⠀⠣⠀⠀⠀⢷⠤
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡦
-⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀
-⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀
-⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆
-⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀
-)";
+enum class BattleTurn {
+    PLAYER,
+    ENEMY
+};
 
-/*int startBattle() {
-    clear();
+void draw_player_bar(WINDOW* pl_bar, WINDOW* en_bar, WINDOW* act_bar, int width) {
+    wborder(pl_bar, '|', '|', '=', '=', '#', '#', '#', '#');
+    mvwhline(pl_bar, 2, 1, ACS_HLINE, width / 6 - 2);
+    mvwaddch(pl_bar, 2, 0, '+');
+    mvwaddch(pl_bar, 2, width / 6 - 1, '+');
 
+    wborder(en_bar, '|', '|', '=', '=', '#', '#', '#', '#');
+    mvwhline(en_bar, 2, 1, ACS_HLINE, width / 6 - 2);
+    mvwaddch(en_bar, 2, 0, '+');
+    mvwaddch(en_bar, 2, width / 6 - 1, '+');
 
-    int height, width;
-    getmaxyx(stdscr, height, width);
-
-    int middle_col = width / 2;
-    int left_width = middle_col;
-    int right_width = width - middle_col;
-
-
-    WINDOW* left_win = newwin(height, left_width, 0, 0);
-    WINDOW* right_win = newwin(height, right_width, 0, left_width);
-
-    box(left_win, 0, 0);
-    box(right_win, 0, 0);
-
-    print_multiline(left_win, 5, 10, ascii_art);
-    print_multiline(right_win, 4, 2, ascii_art);
-
-    refresh();
-    wrefresh(left_win);
-    wrefresh(right_win);
-
-
-    while(getch() != 'q');
-
-    delwin(left_win);
-    delwin(right_win);
-
-    return 0;
-}*/
-
-static pid_t music_pid = -1;
-
-void stopMusic();
-
-void playMusicInBackground(const std::string& filename) {
-    // Если уже играет — сначала остановим
-    pid_t pid = fork();
-    if (pid == 0) {
-        // Дочерний процесс: подавляем весь вывод
-        int fd = open("/dev/null", O_WRONLY);
-        dup2(fd, STDOUT_FILENO);
-        dup2(fd, STDERR_FILENO);
-        close(fd);
-
-        // Запускаем mpg123 в тихом режиме
-        execlp("mpg123", "mpg123", "-q", filename.c_str(), (char*)nullptr);
-        _exit(1); // если не удалось запустить
-    } else if (pid > 0) {
-        // Родитель: запоминаем PID
-        music_pid = pid;
-        //std::cout << "Музыка запущена в фоне (PID: " << music_pid << ")\n";
-    } else {
-        std::cerr << "Ошибка: не удалось создать процесс\n";
-    }
+    wborder(act_bar, '|', '|', '-', '-', '+', '+', '+', '+');
 }
 
-void stopMusic() {
-    if (music_pid == -1) {
-        std::cout << "Музыка не воспроизводится.\n";
-        return;
-    }
+WINDOW* create_player_bar(int height, int width) {
+    WINDOW* pl_bar = newwin(height / 5, width / 6, 0, 0);
+    return pl_bar;
+}
 
-    //Отправляем сигнал завершения
-    if (kill(music_pid, SIGTERM) == 0) {
-        // Ждём завершения (но не блокируем надолго — можно добавить таймаут)
-        int status;
-        waitpid(music_pid, &status, 0);
-        std::cout << "Музыка остановлена.\n";
+WINDOW* create_enemy_bar(int height, int width) {
+    WINDOW* en_bar = newwin(height / 5, width / 6, 0, width - width / 6);
+    return en_bar;
+}
+
+WINDOW* create_action_bar(int height, int width) {
+    WINDOW* act_bar = newwin(height / 5, width / 6, height - height / 5, 0);
+    return act_bar;
+}
+
+void update_battle_windows(
+    WINDOW* pl_bar, WINDOW* en_bar, WINDOW* act_bar,
+    std::shared_ptr<Player> player, std::shared_ptr<Enemy> enemy,
+    const std::vector<std::string>& options, int selected_option,
+    int width)
+{
+    werase(pl_bar);
+    werase(en_bar);
+    werase(act_bar);
+    
+    draw_player_bar(pl_bar, en_bar, act_bar, width);
+
+
+    mvwprintw(pl_bar, 5, 5, "Health: %d", player->getHealth());
+    if (player->getMode() == MELEE_MODE) {
+        mvwprintw(pl_bar, 6, 5, "MODE: MELEE");
     } else {
-        std::cerr << "Не удалось остановить процесс " << music_pid << "\n";
+        mvwprintw(pl_bar, 6, 5, "MODE: RANGE");
     }
-    kill(music_pid, SIGTERM);
 
-    music_pid = -1;
+    mvwprintw(en_bar, 5, 5, "Health: %d", enemy->getHealth());
+
+    for (int i = 0; i < 2; i++) {
+        if (selected_option == i) {
+            wattron(act_bar, COLOR_PAIR(static_cast<int>(ColorPair::BATTLE_BUTTON)));
+            mvwprintw(act_bar, 5 + i, width / 6 / 4, "%s", options[i].c_str());
+            wattroff(act_bar, COLOR_PAIR(static_cast<int>(ColorPair::BATTLE_BUTTON)));
+        } else {
+            mvwprintw(act_bar, 5 + i, width / 6 / 4, "%s", options[i].c_str());
+        }
+    }
+
+    wrefresh(act_bar);
+    wrefresh(pl_bar);
+    wrefresh(en_bar);
 }
 
 int startBattle(const ScreenSize* const screen, std::vector<std::vector<Ceil>>& ceils, std::shared_ptr<Player> player, std::shared_ptr<Enemy> enemy) {
     clear();
 
-    int width, height;
-    height = screen->yMax;
-    width = screen->xMax;
-    WINDOW* pl_bar = newwin(height/5, width/6, 0, 0);
-    wborder(pl_bar, '|', '|', '=', '=', '#', '#', '#', '#');
-    mvwhline(pl_bar, 2, 1, ACS_HLINE, width/6 - 2);
-    mvwaddch(pl_bar, 2, 0, '+');
-    mvwaddch(pl_bar, 2, width/6 - 1, '+');
-    
-    WINDOW* en_bar = newwin(height/5, width/6, 0, width - width/6);
-    wborder(en_bar, '|', '|', '=', '=', '#', '#', '#', '#');
-    mvwhline(en_bar, 2, 1, ACS_HLINE, width/6 - 2);
-    mvwaddch(en_bar, 2, 0, '+');
-    mvwaddch(en_bar, 2, width/6 - 1, '+');
+    int height = screen->yMax;
+    int width = screen->xMax;
 
-    WINDOW* act_bar = newwin(height/5, width/6, height - height / 5, 0);
-    wborder(act_bar, '|', '|', '-', '-', '+', '+', '+', '+');
-    
-    print_multiline(height/2 - height/4, width/2 - width/4, ascii_art);
+    WINDOW* pl_bar = create_player_bar(height, width);
+    WINDOW* en_bar = create_enemy_bar(height, width);
+    WINDOW* act_bar = create_action_bar(height, width);
 
     refresh();
     wrefresh(pl_bar);
@@ -163,65 +92,65 @@ int startBattle(const ScreenSize* const screen, std::vector<std::vector<Ceil>>& 
     wrefresh(act_bar);
 
     std::vector<std::string> options {"Attack", "Change weapon"};
-    int option = 0;
-    int ch;
-    playMusicInBackground("music1.mp3");
-    while (ch != 'q') {
-        
-        mvwprintw(pl_bar, 5, 5, "Health: %d", player->getHealth());
-        mvwprintw(en_bar, 5, 5, "Health: %d", enemy->getHealth());
-        if (player->getMode() == MELEE_MODE) {
-            mvwprintw(pl_bar, 6, 5, "MODE: MELEE");
-        } else {
-            mvwprintw(pl_bar, 6, 5, "MODE: RANGE");
-        }
-        for (int i = 0; i < 2; i++) {
-            if (option == i) {
-                wattron(act_bar, COLOR_PAIR(static_cast<int>(ColorPair::BATTLE_BUTTON)));
-                mvwprintw(act_bar, 5 + i, width/6/4, "%s", options[i].c_str());
-                wattroff(act_bar, COLOR_PAIR(static_cast<int>(ColorPair::BATTLE_BUTTON)));
-            } else {
-                mvwprintw(act_bar, 5 + i, width/6/4, "%s", options[i].c_str());
-            }
-        }
-        refresh();
-        wrefresh(act_bar);
-        wrefresh(pl_bar);
-        wrefresh(en_bar);
-        ch = getch();
+    int selected_option = 0;
+    int ch = 0; 
 
-        switch (ch) {
-            case KEY_UP:
-                if (option > 0) {
-                    option--;
-                }
-                break;
-            case KEY_DOWN:
-                if  (option < 1) {
-                    option++;
-                }
-                break;
-            default:
-                break;
-        }
+    bool battleIsOver = false;
+    BattleTurn currentTurn = BattleTurn::PLAYER;
+    int battleResult = 0;
 
-        if (ch == ENTER) {
-            if (options[option] == "Attack") {
-                enemy->takeDamage(player->attack());
-                if (enemy->getHealth() <= 0) {
-                    ceils[enemy->getY() - screen->yMax/2 + FIELD_HEIGHT/2][enemy->getX() - screen->xMax/2 + FIELD_WIDTH/2].setEntity(std::make_shared<Floor>(enemy->getX(), enemy->getY()));
+    update_battle_windows(pl_bar, en_bar, act_bar, player, enemy, options, selected_option, width);
+
+    while(!battleIsOver) {
+        if (currentTurn == BattleTurn::PLAYER) {
+            int ch = getch();
+            switch (ch) {
+                case KEY_UP:
+                    if (selected_option > 0) {
+                        selected_option--;
+                    }
                     break;
-                }
+                case KEY_DOWN:
+                    if (selected_option < 1) {
+                        selected_option++;
+                    }
+                    break;
+                case ENTER:
+                    if (options[selected_option] == "Attack") {
+                        int damage = player->attack();
+                        enemy->takeDamage(damage);
+                        
+
+
+                        if (enemy->getHealth() <= 0) {
+                            ceils[enemy->getY() - screen->yMax/2 + FIELD_HEIGHT/2][enemy->getX() - screen->xMax/2 + FIELD_WIDTH/2].setEntity(std::make_shared<Floor>(enemy->getX(), enemy->getY()));
+                            battleIsOver = true;
+                            battleResult = 1;
+                        } else {
+                            currentTurn = BattleTurn::ENEMY;
+                        }
+                    }
+                    break;
+            }
+        } else if (currentTurn == BattleTurn::ENEMY) {
+            napms(500);
+            player->takeDamage(enemy->attack());
+
+            if (player->getHealth() <= 0) {
+                ceils[player->getY() - screen->yMax/2 + FIELD_HEIGHT/2][player->getX() - screen->xMax/2 + FIELD_WIDTH/2].setEntity(std::make_shared<Floor>(player->getX(), player->getY()));
+                battleIsOver = true;
+                battleResult = 0;
+            } else {
+                currentTurn = BattleTurn::PLAYER;
             }
         }
-
+        update_battle_windows(pl_bar, en_bar, act_bar, player, enemy, options, selected_option, width);
     }
-    stopMusic();
-
     delwin(pl_bar);
     delwin(en_bar);
     delwin(act_bar);
-    endwin();
 
-    return 0;
+    //endwin();
+
+    return battleResult;
 }

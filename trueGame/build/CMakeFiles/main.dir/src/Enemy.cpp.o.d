@@ -1,10 +1,10 @@
 CMakeFiles/main.dir/src/Enemy.cpp.o: \
- /home/con2222/cppgame/trueGame/src/Enemy.cpp \
+ /home/con2222/repos/ncurses-game/trueGame/src/Enemy.cpp \
  /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/stdc-predef.h \
- /home/con2222/cppgame/trueGame/include/Enemy.hpp \
- /home/con2222/cppgame/trueGame/include/LivingEntity.hpp \
- /home/con2222/cppgame/trueGame/include/Entity.hpp \
- /home/con2222/cppgame/trueGame/include/ScreenSize.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Enemy.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/LivingEntity.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Entity.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/ScreenSize.hpp \
  /nix/store/0cjxn9v10y6ywv9yfdb50dzr84xhpxhl-ncurses-6.5-dev/include/curses.h \
  /nix/store/0cjxn9v10y6ywv9yfdb50dzr84xhpxhl-ncurses-6.5-dev/include/ncurses_dll.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stdint.h \
@@ -50,9 +50,6 @@ CMakeFiles/main.dir/src/Enemy.cpp.o: \
  /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/wchar2.h \
  /nix/store/0cjxn9v10y6ywv9yfdb50dzr84xhpxhl-ncurses-6.5-dev/include/unctrl.h \
  /nix/store/0cjxn9v10y6ywv9yfdb50dzr84xhpxhl-ncurses-6.5-dev/include/curses.h \
- /home/con2222/cppgame/trueGame/include/Constants.hpp \
- /home/con2222/cppgame/trueGame/include/Player.hpp \
- /home/con2222/cppgame/trueGame/include/Ceil.hpp \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/memory \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/memoryfwd.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/x86_64-unknown-linux-gnu/bits/c++config.h \
@@ -155,6 +152,9 @@ CMakeFiles/main.dir/src/Enemy.cpp.o: \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/backward/auto_ptr.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/pstl/glue_memory_defs.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/pstl/execution_defs.h \
+ /home/con2222/repos/ncurses-game/trueGame/include/Constants.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Player.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Ceil.hpp \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/vector \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/stl_vector.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/initializer_list \
@@ -164,6 +164,6 @@ CMakeFiles/main.dir/src/Enemy.cpp.o: \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/memory_resource.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/cstddef \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/uses_allocator_args.h \
- /home/con2222/cppgame/trueGame/include/Floor.hpp \
- /home/con2222/cppgame/trueGame/include/Color.hpp \
- /home/con2222/cppgame/trueGame/include/GameLogic.hpp
+ /home/con2222/repos/ncurses-game/trueGame/include/Floor.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Color.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/GameLogic.hpp

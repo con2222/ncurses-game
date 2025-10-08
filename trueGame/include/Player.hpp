@@ -5,7 +5,7 @@
 #include <vector>
 #include <LivingEntity.hpp>
 
-class Player : public LivingEntity, public std::enable_shared_from_this<Player> {
+class Player : public LivingEntity {
 public:
     Player(int x, int y);
     

@@ -70,19 +70,24 @@ void Field::spawnEnemy() {
     ceils[1][1].setEntity(enemy_ptr);
 }
 
-void Field::update(int ch) { 
+bool Field::update(int ch) { 
     std::shared_ptr<Player> player_ptr = nullptr;
     for (const auto& entity : entities) {
         if (entity->getType() == Entity::Type::PLAYER) {
-            player_ptr = std::static_pointer_cast<Player>(entity);
-            if (ch != ERR) {
-                 player_ptr->handleInput(ceils, ch, screen, height, width); 
+            if (entity->getHealth() > 0) {
+                player_ptr = std::static_pointer_cast<Player>(entity);
+                if (ch != ERR) {
+                    player_ptr->handleInput(ceils, ch, screen, height, width); 
+                }
+                break; 
+            } else {
+                entities.erase(entities.begin() + 0);
+                return false;
             }
-            break; 
         }
     }
 
-    if (player_ptr) {
+    /*if (player_ptr) {
         for (const auto& entity : entities) {
             if (entity->getType() == Entity::Type::ENEMY) {
                 if (entity->getHealth() > 0) {
@@ -91,24 +96,22 @@ void Field::update(int ch) {
                 }
             }
         }
-    }
+    }*/
 
-    auto it_to_remove = std::remove_if(entities.begin(), entities.end(), 
-        [](const std::shared_ptr<Entity>& entity) {
-            // Возвращаем true, если сущность нужно удалить
-            return entity->getHealth() <= 0;
-        }
-    );
-
-    bool player_is_alive = false;
-    for (const auto& entity : entities) {
-        if (entity->getType() == Entity::Type::PLAYER) {
-            player_is_alive = true;
-            break;
+    if (player_ptr) {
+        for (int i = 0; i < entities.size(); i++) {
+            if (entities[i]->getType() == Entity::Type::ENEMY) {
+                if (entities[i]->getHealth() > 0) {
+                    std::shared_ptr<Enemy> enemy_ptr = std::static_pointer_cast<Enemy>(entities[i]);
+                    enemy_ptr->update(ceils, screen, player_ptr, height, width);
+                } else {
+                    entities.erase(entities.begin() + i);
+                }
+            }
         }
     }
 
-    if (!player_is_alive) {
-        // Здесь можно установить флаг game_over или вызвать соответствующий метод
-    }
+
+
+    return true;
 }

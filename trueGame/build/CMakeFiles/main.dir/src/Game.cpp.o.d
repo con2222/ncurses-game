@@ -1,11 +1,11 @@
 CMakeFiles/main.dir/src/Game.cpp.o: \
- /home/con2222/cppgame/trueGame/src/Game.cpp \
+ /home/con2222/repos/ncurses-game/trueGame/src/Game.cpp \
  /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/stdc-predef.h \
- /home/con2222/cppgame/trueGame/include/Game.hpp \
- /home/con2222/cppgame/trueGame/include/Field.hpp \
- /home/con2222/cppgame/trueGame/include/Ceil.hpp \
- /home/con2222/cppgame/trueGame/include/Entity.hpp \
- /home/con2222/cppgame/trueGame/include/ScreenSize.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Game.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Field.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Ceil.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Entity.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/ScreenSize.hpp \
  /nix/store/0cjxn9v10y6ywv9yfdb50dzr84xhpxhl-ncurses-6.5-dev/include/curses.h \
  /nix/store/0cjxn9v10y6ywv9yfdb50dzr84xhpxhl-ncurses-6.5-dev/include/ncurses_dll.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stdint.h \
@@ -162,8 +162,8 @@ CMakeFiles/main.dir/src/Game.cpp.o: \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/memory_resource.h \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/cstddef \
  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/uses_allocator_args.h \
- /home/con2222/cppgame/trueGame/include/LivingEntity.hpp \
- /home/con2222/cppgame/trueGame/include/Constants.hpp \
- /home/con2222/cppgame/trueGame/include/Color.hpp \
- /home/con2222/cppgame/trueGame/include/Wall.hpp \
- /home/con2222/cppgame/trueGame/include/Floor.hpp
+ /home/con2222/repos/ncurses-game/trueGame/include/LivingEntity.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Constants.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Color.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Wall.hpp \
+ /home/con2222/repos/ncurses-game/trueGame/include/Floor.hpp

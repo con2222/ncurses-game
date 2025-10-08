@@ -30,7 +30,8 @@ void Enemy::update(std::vector<std::vector<Ceil>>& ceils, const ScreenSize* scre
         y = nextY;
         ceils[y - screen->yMax/2 + height/2][x - screen->xMax/2 + width/2].setEntity(shared_from_this());
     } else if (nextX == playerX && nextY == playerY) {
-        startBattle(screen, ceils, player, shared_from_this());
+        player->takeDamage(damage);
+        startBattle(screen, ceils, player, std::static_pointer_cast<Enemy>(shared_from_this()));
     }
 }
 
@@ -43,3 +44,5 @@ void Enemy::draw() const {
 void Enemy::takeDamage(int amount) {
     health-=amount;
 }
+
+int Enemy::attack() {return damage;}

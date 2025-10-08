@@ -57,10 +57,10 @@ RM = /nix/store/sywrvcqgm7bf6njpfbkhd8iy4iaymhj2-cmake-3.31.6/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/con2222/cppgame/trueGame
+CMAKE_SOURCE_DIR = /home/con2222/repos/ncurses-game/trueGame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/con2222/cppgame/trueGame/build
+CMAKE_BINARY_DIR = /home/con2222/repos/ncurses-game/trueGame/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/con2222/cppgame/trueGame/build/CMakeFiles /home/con2222/cppgame/trueGame/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles /home/con2222/repos/ncurses-game/trueGame/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/con2222/cppgame/trueGame/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

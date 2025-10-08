@@ -53,10 +53,10 @@ RM = /nix/store/sywrvcqgm7bf6njpfbkhd8iy4iaymhj2-cmake-3.31.6/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/con2222/cppgame/trueGame
+CMAKE_SOURCE_DIR = /home/con2222/repos/ncurses-game/trueGame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/con2222/cppgame/trueGame/build
+CMAKE_BINARY_DIR = /home/con2222/repos/ncurses-game/trueGame/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -73,186 +73,186 @@ CMakeFiles/main.dir/codegen:
 .PHONY : CMakeFiles/main.dir/codegen
 
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/main.cpp.o: /home/con2222/cppgame/trueGame/main.cpp
+CMakeFiles/main.dir/main.cpp.o: /home/con2222/repos/ncurses-game/trueGame/main.cpp
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/cppgame/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /home/con2222/cppgame/trueGame/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /home/con2222/repos/ncurses-game/trueGame/main.cpp
 
 CMakeFiles/main.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/cppgame/trueGame/main.cpp > CMakeFiles/main.dir/main.cpp.i
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/repos/ncurses-game/trueGame/main.cpp > CMakeFiles/main.dir/main.cpp.i
 
 CMakeFiles/main.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/cppgame/trueGame/main.cpp -o CMakeFiles/main.dir/main.cpp.s
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/repos/ncurses-game/trueGame/main.cpp -o CMakeFiles/main.dir/main.cpp.s
 
 CMakeFiles/main.dir/src/Field.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Field.cpp.o: /home/con2222/cppgame/trueGame/src/Field.cpp
+CMakeFiles/main.dir/src/Field.cpp.o: /home/con2222/repos/ncurses-game/trueGame/src/Field.cpp
 CMakeFiles/main.dir/src/Field.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/cppgame/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/Field.cpp.o"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Field.cpp.o -MF CMakeFiles/main.dir/src/Field.cpp.o.d -o CMakeFiles/main.dir/src/Field.cpp.o -c /home/con2222/cppgame/trueGame/src/Field.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/Field.cpp.o"
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Field.cpp.o -MF CMakeFiles/main.dir/src/Field.cpp.o.d -o CMakeFiles/main.dir/src/Field.cpp.o -c /home/con2222/repos/ncurses-game/trueGame/src/Field.cpp
 
 CMakeFiles/main.dir/src/Field.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Field.cpp.i"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/cppgame/trueGame/src/Field.cpp > CMakeFiles/main.dir/src/Field.cpp.i
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/repos/ncurses-game/trueGame/src/Field.cpp > CMakeFiles/main.dir/src/Field.cpp.i
 
 CMakeFiles/main.dir/src/Field.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Field.cpp.s"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/cppgame/trueGame/src/Field.cpp -o CMakeFiles/main.dir/src/Field.cpp.s
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/repos/ncurses-game/trueGame/src/Field.cpp -o CMakeFiles/main.dir/src/Field.cpp.s
 
 CMakeFiles/main.dir/src/Game.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Game.cpp.o: /home/con2222/cppgame/trueGame/src/Game.cpp
+CMakeFiles/main.dir/src/Game.cpp.o: /home/con2222/repos/ncurses-game/trueGame/src/Game.cpp
 CMakeFiles/main.dir/src/Game.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/cppgame/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/Game.cpp.o"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Game.cpp.o -MF CMakeFiles/main.dir/src/Game.cpp.o.d -o CMakeFiles/main.dir/src/Game.cpp.o -c /home/con2222/cppgame/trueGame/src/Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/Game.cpp.o"
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Game.cpp.o -MF CMakeFiles/main.dir/src/Game.cpp.o.d -o CMakeFiles/main.dir/src/Game.cpp.o -c /home/con2222/repos/ncurses-game/trueGame/src/Game.cpp
 
 CMakeFiles/main.dir/src/Game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Game.cpp.i"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/cppgame/trueGame/src/Game.cpp > CMakeFiles/main.dir/src/Game.cpp.i
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/repos/ncurses-game/trueGame/src/Game.cpp > CMakeFiles/main.dir/src/Game.cpp.i
 
 CMakeFiles/main.dir/src/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Game.cpp.s"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/cppgame/trueGame/src/Game.cpp -o CMakeFiles/main.dir/src/Game.cpp.s
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/repos/ncurses-game/trueGame/src/Game.cpp -o CMakeFiles/main.dir/src/Game.cpp.s
 
 CMakeFiles/main.dir/src/Ceil.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Ceil.cpp.o: /home/con2222/cppgame/trueGame/src/Ceil.cpp
+CMakeFiles/main.dir/src/Ceil.cpp.o: /home/con2222/repos/ncurses-game/trueGame/src/Ceil.cpp
 CMakeFiles/main.dir/src/Ceil.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/cppgame/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/Ceil.cpp.o"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Ceil.cpp.o -MF CMakeFiles/main.dir/src/Ceil.cpp.o.d -o CMakeFiles/main.dir/src/Ceil.cpp.o -c /home/con2222/cppgame/trueGame/src/Ceil.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/Ceil.cpp.o"
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Ceil.cpp.o -MF CMakeFiles/main.dir/src/Ceil.cpp.o.d -o CMakeFiles/main.dir/src/Ceil.cpp.o -c /home/con2222/repos/ncurses-game/trueGame/src/Ceil.cpp
 
 CMakeFiles/main.dir/src/Ceil.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Ceil.cpp.i"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/cppgame/trueGame/src/Ceil.cpp > CMakeFiles/main.dir/src/Ceil.cpp.i
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/repos/ncurses-game/trueGame/src/Ceil.cpp > CMakeFiles/main.dir/src/Ceil.cpp.i
 
 CMakeFiles/main.dir/src/Ceil.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Ceil.cpp.s"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/cppgame/trueGame/src/Ceil.cpp -o CMakeFiles/main.dir/src/Ceil.cpp.s
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/repos/ncurses-game/trueGame/src/Ceil.cpp -o CMakeFiles/main.dir/src/Ceil.cpp.s
 
 CMakeFiles/main.dir/src/Color.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Color.cpp.o: /home/con2222/cppgame/trueGame/src/Color.cpp
+CMakeFiles/main.dir/src/Color.cpp.o: /home/con2222/repos/ncurses-game/trueGame/src/Color.cpp
 CMakeFiles/main.dir/src/Color.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/cppgame/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/Color.cpp.o"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Color.cpp.o -MF CMakeFiles/main.dir/src/Color.cpp.o.d -o CMakeFiles/main.dir/src/Color.cpp.o -c /home/con2222/cppgame/trueGame/src/Color.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/Color.cpp.o"
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Color.cpp.o -MF CMakeFiles/main.dir/src/Color.cpp.o.d -o CMakeFiles/main.dir/src/Color.cpp.o -c /home/con2222/repos/ncurses-game/trueGame/src/Color.cpp
 
 CMakeFiles/main.dir/src/Color.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Color.cpp.i"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/cppgame/trueGame/src/Color.cpp > CMakeFiles/main.dir/src/Color.cpp.i
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/repos/ncurses-game/trueGame/src/Color.cpp > CMakeFiles/main.dir/src/Color.cpp.i
 
 CMakeFiles/main.dir/src/Color.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Color.cpp.s"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/cppgame/trueGame/src/Color.cpp -o CMakeFiles/main.dir/src/Color.cpp.s
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/repos/ncurses-game/trueGame/src/Color.cpp -o CMakeFiles/main.dir/src/Color.cpp.s
 
 CMakeFiles/main.dir/src/Wall.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Wall.cpp.o: /home/con2222/cppgame/trueGame/src/Wall.cpp
+CMakeFiles/main.dir/src/Wall.cpp.o: /home/con2222/repos/ncurses-game/trueGame/src/Wall.cpp
 CMakeFiles/main.dir/src/Wall.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/cppgame/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/src/Wall.cpp.o"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Wall.cpp.o -MF CMakeFiles/main.dir/src/Wall.cpp.o.d -o CMakeFiles/main.dir/src/Wall.cpp.o -c /home/con2222/cppgame/trueGame/src/Wall.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/src/Wall.cpp.o"
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Wall.cpp.o -MF CMakeFiles/main.dir/src/Wall.cpp.o.d -o CMakeFiles/main.dir/src/Wall.cpp.o -c /home/con2222/repos/ncurses-game/trueGame/src/Wall.cpp
 
 CMakeFiles/main.dir/src/Wall.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Wall.cpp.i"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/cppgame/trueGame/src/Wall.cpp > CMakeFiles/main.dir/src/Wall.cpp.i
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/repos/ncurses-game/trueGame/src/Wall.cpp > CMakeFiles/main.dir/src/Wall.cpp.i
 
 CMakeFiles/main.dir/src/Wall.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Wall.cpp.s"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/cppgame/trueGame/src/Wall.cpp -o CMakeFiles/main.dir/src/Wall.cpp.s
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/repos/ncurses-game/trueGame/src/Wall.cpp -o CMakeFiles/main.dir/src/Wall.cpp.s
 
 CMakeFiles/main.dir/src/Floor.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Floor.cpp.o: /home/con2222/cppgame/trueGame/src/Floor.cpp
+CMakeFiles/main.dir/src/Floor.cpp.o: /home/con2222/repos/ncurses-game/trueGame/src/Floor.cpp
 CMakeFiles/main.dir/src/Floor.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/cppgame/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/src/Floor.cpp.o"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Floor.cpp.o -MF CMakeFiles/main.dir/src/Floor.cpp.o.d -o CMakeFiles/main.dir/src/Floor.cpp.o -c /home/con2222/cppgame/trueGame/src/Floor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/src/Floor.cpp.o"
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Floor.cpp.o -MF CMakeFiles/main.dir/src/Floor.cpp.o.d -o CMakeFiles/main.dir/src/Floor.cpp.o -c /home/con2222/repos/ncurses-game/trueGame/src/Floor.cpp
 
 CMakeFiles/main.dir/src/Floor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Floor.cpp.i"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/cppgame/trueGame/src/Floor.cpp > CMakeFiles/main.dir/src/Floor.cpp.i
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/repos/ncurses-game/trueGame/src/Floor.cpp > CMakeFiles/main.dir/src/Floor.cpp.i
 
 CMakeFiles/main.dir/src/Floor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Floor.cpp.s"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/cppgame/trueGame/src/Floor.cpp -o CMakeFiles/main.dir/src/Floor.cpp.s
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/repos/ncurses-game/trueGame/src/Floor.cpp -o CMakeFiles/main.dir/src/Floor.cpp.s
 
 CMakeFiles/main.dir/src/Entity.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Entity.cpp.o: /home/con2222/cppgame/trueGame/src/Entity.cpp
+CMakeFiles/main.dir/src/Entity.cpp.o: /home/con2222/repos/ncurses-game/trueGame/src/Entity.cpp
 CMakeFiles/main.dir/src/Entity.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/cppgame/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/src/Entity.cpp.o"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Entity.cpp.o -MF CMakeFiles/main.dir/src/Entity.cpp.o.d -o CMakeFiles/main.dir/src/Entity.cpp.o -c /home/con2222/cppgame/trueGame/src/Entity.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/src/Entity.cpp.o"
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Entity.cpp.o -MF CMakeFiles/main.dir/src/Entity.cpp.o.d -o CMakeFiles/main.dir/src/Entity.cpp.o -c /home/con2222/repos/ncurses-game/trueGame/src/Entity.cpp
 
 CMakeFiles/main.dir/src/Entity.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Entity.cpp.i"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/cppgame/trueGame/src/Entity.cpp > CMakeFiles/main.dir/src/Entity.cpp.i
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/repos/ncurses-game/trueGame/src/Entity.cpp > CMakeFiles/main.dir/src/Entity.cpp.i
 
 CMakeFiles/main.dir/src/Entity.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Entity.cpp.s"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/cppgame/trueGame/src/Entity.cpp -o CMakeFiles/main.dir/src/Entity.cpp.s
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/repos/ncurses-game/trueGame/src/Entity.cpp -o CMakeFiles/main.dir/src/Entity.cpp.s
 
 CMakeFiles/main.dir/src/Player.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Player.cpp.o: /home/con2222/cppgame/trueGame/src/Player.cpp
+CMakeFiles/main.dir/src/Player.cpp.o: /home/con2222/repos/ncurses-game/trueGame/src/Player.cpp
 CMakeFiles/main.dir/src/Player.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/cppgame/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/src/Player.cpp.o"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Player.cpp.o -MF CMakeFiles/main.dir/src/Player.cpp.o.d -o CMakeFiles/main.dir/src/Player.cpp.o -c /home/con2222/cppgame/trueGame/src/Player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/src/Player.cpp.o"
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Player.cpp.o -MF CMakeFiles/main.dir/src/Player.cpp.o.d -o CMakeFiles/main.dir/src/Player.cpp.o -c /home/con2222/repos/ncurses-game/trueGame/src/Player.cpp
 
 CMakeFiles/main.dir/src/Player.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Player.cpp.i"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/cppgame/trueGame/src/Player.cpp > CMakeFiles/main.dir/src/Player.cpp.i
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/repos/ncurses-game/trueGame/src/Player.cpp > CMakeFiles/main.dir/src/Player.cpp.i
 
 CMakeFiles/main.dir/src/Player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Player.cpp.s"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/cppgame/trueGame/src/Player.cpp -o CMakeFiles/main.dir/src/Player.cpp.s
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/repos/ncurses-game/trueGame/src/Player.cpp -o CMakeFiles/main.dir/src/Player.cpp.s
 
 CMakeFiles/main.dir/src/Enemy.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Enemy.cpp.o: /home/con2222/cppgame/trueGame/src/Enemy.cpp
+CMakeFiles/main.dir/src/Enemy.cpp.o: /home/con2222/repos/ncurses-game/trueGame/src/Enemy.cpp
 CMakeFiles/main.dir/src/Enemy.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/cppgame/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/src/Enemy.cpp.o"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Enemy.cpp.o -MF CMakeFiles/main.dir/src/Enemy.cpp.o.d -o CMakeFiles/main.dir/src/Enemy.cpp.o -c /home/con2222/cppgame/trueGame/src/Enemy.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/src/Enemy.cpp.o"
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Enemy.cpp.o -MF CMakeFiles/main.dir/src/Enemy.cpp.o.d -o CMakeFiles/main.dir/src/Enemy.cpp.o -c /home/con2222/repos/ncurses-game/trueGame/src/Enemy.cpp
 
 CMakeFiles/main.dir/src/Enemy.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Enemy.cpp.i"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/cppgame/trueGame/src/Enemy.cpp > CMakeFiles/main.dir/src/Enemy.cpp.i
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/repos/ncurses-game/trueGame/src/Enemy.cpp > CMakeFiles/main.dir/src/Enemy.cpp.i
 
 CMakeFiles/main.dir/src/Enemy.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Enemy.cpp.s"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/cppgame/trueGame/src/Enemy.cpp -o CMakeFiles/main.dir/src/Enemy.cpp.s
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/repos/ncurses-game/trueGame/src/Enemy.cpp -o CMakeFiles/main.dir/src/Enemy.cpp.s
 
 CMakeFiles/main.dir/src/GameLogic.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/GameLogic.cpp.o: /home/con2222/cppgame/trueGame/src/GameLogic.cpp
+CMakeFiles/main.dir/src/GameLogic.cpp.o: /home/con2222/repos/ncurses-game/trueGame/src/GameLogic.cpp
 CMakeFiles/main.dir/src/GameLogic.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/cppgame/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/src/GameLogic.cpp.o"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/GameLogic.cpp.o -MF CMakeFiles/main.dir/src/GameLogic.cpp.o.d -o CMakeFiles/main.dir/src/GameLogic.cpp.o -c /home/con2222/cppgame/trueGame/src/GameLogic.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/src/GameLogic.cpp.o"
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/GameLogic.cpp.o -MF CMakeFiles/main.dir/src/GameLogic.cpp.o.d -o CMakeFiles/main.dir/src/GameLogic.cpp.o -c /home/con2222/repos/ncurses-game/trueGame/src/GameLogic.cpp
 
 CMakeFiles/main.dir/src/GameLogic.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/GameLogic.cpp.i"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/cppgame/trueGame/src/GameLogic.cpp > CMakeFiles/main.dir/src/GameLogic.cpp.i
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/repos/ncurses-game/trueGame/src/GameLogic.cpp > CMakeFiles/main.dir/src/GameLogic.cpp.i
 
 CMakeFiles/main.dir/src/GameLogic.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/GameLogic.cpp.s"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/cppgame/trueGame/src/GameLogic.cpp -o CMakeFiles/main.dir/src/GameLogic.cpp.s
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/repos/ncurses-game/trueGame/src/GameLogic.cpp -o CMakeFiles/main.dir/src/GameLogic.cpp.s
 
 CMakeFiles/main.dir/src/Utils.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Utils.cpp.o: /home/con2222/cppgame/trueGame/src/Utils.cpp
+CMakeFiles/main.dir/src/Utils.cpp.o: /home/con2222/repos/ncurses-game/trueGame/src/Utils.cpp
 CMakeFiles/main.dir/src/Utils.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/cppgame/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.dir/src/Utils.cpp.o"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Utils.cpp.o -MF CMakeFiles/main.dir/src/Utils.cpp.o.d -o CMakeFiles/main.dir/src/Utils.cpp.o -c /home/con2222/cppgame/trueGame/src/Utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.dir/src/Utils.cpp.o"
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Utils.cpp.o -MF CMakeFiles/main.dir/src/Utils.cpp.o.d -o CMakeFiles/main.dir/src/Utils.cpp.o -c /home/con2222/repos/ncurses-game/trueGame/src/Utils.cpp
 
 CMakeFiles/main.dir/src/Utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Utils.cpp.i"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/cppgame/trueGame/src/Utils.cpp > CMakeFiles/main.dir/src/Utils.cpp.i
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/repos/ncurses-game/trueGame/src/Utils.cpp > CMakeFiles/main.dir/src/Utils.cpp.i
 
 CMakeFiles/main.dir/src/Utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Utils.cpp.s"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/cppgame/trueGame/src/Utils.cpp -o CMakeFiles/main.dir/src/Utils.cpp.s
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/repos/ncurses-game/trueGame/src/Utils.cpp -o CMakeFiles/main.dir/src/Utils.cpp.s
 
 CMakeFiles/main.dir/src/LivingEntity.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/LivingEntity.cpp.o: /home/con2222/cppgame/trueGame/src/LivingEntity.cpp
+CMakeFiles/main.dir/src/LivingEntity.cpp.o: /home/con2222/repos/ncurses-game/trueGame/src/LivingEntity.cpp
 CMakeFiles/main.dir/src/LivingEntity.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/cppgame/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.dir/src/LivingEntity.cpp.o"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/LivingEntity.cpp.o -MF CMakeFiles/main.dir/src/LivingEntity.cpp.o.d -o CMakeFiles/main.dir/src/LivingEntity.cpp.o -c /home/con2222/cppgame/trueGame/src/LivingEntity.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.dir/src/LivingEntity.cpp.o"
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/LivingEntity.cpp.o -MF CMakeFiles/main.dir/src/LivingEntity.cpp.o.d -o CMakeFiles/main.dir/src/LivingEntity.cpp.o -c /home/con2222/repos/ncurses-game/trueGame/src/LivingEntity.cpp
 
 CMakeFiles/main.dir/src/LivingEntity.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/LivingEntity.cpp.i"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/cppgame/trueGame/src/LivingEntity.cpp > CMakeFiles/main.dir/src/LivingEntity.cpp.i
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/con2222/repos/ncurses-game/trueGame/src/LivingEntity.cpp > CMakeFiles/main.dir/src/LivingEntity.cpp.i
 
 CMakeFiles/main.dir/src/LivingEntity.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/LivingEntity.cpp.s"
-	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/cppgame/trueGame/src/LivingEntity.cpp -o CMakeFiles/main.dir/src/LivingEntity.cpp.s
+	/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/con2222/repos/ncurses-game/trueGame/src/LivingEntity.cpp -o CMakeFiles/main.dir/src/LivingEntity.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
@@ -291,7 +291,7 @@ main: CMakeFiles/main.dir/compiler_depend.ts
 main: /nix/store/yw7vb4hamv9mqgbgf7598zvis7k2spyx-ncurses-6.5/lib/libncurses.so
 main: /nix/store/yw7vb4hamv9mqgbgf7598zvis7k2spyx-ncurses-6.5/lib/libform.so
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/con2222/cppgame/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -303,6 +303,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend:
-	cd /home/con2222/cppgame/trueGame/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/con2222/cppgame/trueGame /home/con2222/cppgame/trueGame /home/con2222/cppgame/trueGame/build /home/con2222/cppgame/trueGame/build /home/con2222/cppgame/trueGame/build/CMakeFiles/main.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/con2222/repos/ncurses-game/trueGame/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/con2222/repos/ncurses-game/trueGame /home/con2222/repos/ncurses-game/trueGame /home/con2222/repos/ncurses-game/trueGame/build /home/con2222/repos/ncurses-game/trueGame/build /home/con2222/repos/ncurses-game/trueGame/build/CMakeFiles/main.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/main.dir/depend
 
