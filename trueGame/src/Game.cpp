@@ -30,7 +30,7 @@ void Game::start() {
 
     field.init();
     field.spawnPlayer();
-    field.spawnEnemy();
+    //field.spawnEnemy();
     field.draw();
     int ch;
 
@@ -39,7 +39,6 @@ void Game::start() {
     while (true) {
         ch = getch();
         if (ch == 'q') {break;}
-
         playerIsAlive = field.update(ch);
 
         if (playerIsAlive == 0) {

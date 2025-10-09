@@ -13,13 +13,19 @@ class Field {
     int width;
 public:
     Field();
+    Field(const Field& other);
+    Field(Field&& other);
+    Field& operator=(const Field& other);
+    Field& operator=(Field&& other);
+
+
     int getH() const;
     int getW() const;
     void draw() const;
     void setScreen(const ScreenSize* screen);
     void init();
     void spawnPlayer();
-    void spawnEnemy();
+    //void spawnEnemy();
     
     bool update(int ch);
 };

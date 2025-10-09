@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/Color.cpp.o.d"
   "CMakeFiles/main.dir/src/Enemy.cpp.o"
   "CMakeFiles/main.dir/src/Enemy.cpp.o.d"
+  "CMakeFiles/main.dir/src/EnemyBase.cpp.o"
+  "CMakeFiles/main.dir/src/EnemyBase.cpp.o.d"
   "CMakeFiles/main.dir/src/Entity.cpp.o"
   "CMakeFiles/main.dir/src/Entity.cpp.o.d"
   "CMakeFiles/main.dir/src/Field.cpp.o"

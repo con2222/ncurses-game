@@ -48,7 +48,7 @@ void update_battle_windows(
     werase(pl_bar);
     werase(en_bar);
     werase(act_bar);
-    
+
     draw_player_bar(pl_bar, en_bar, act_bar, width);
 
 
@@ -76,7 +76,7 @@ void update_battle_windows(
     wrefresh(en_bar);
 }
 
-int startBattle(const ScreenSize* const screen, std::vector<std::vector<Ceil>>& ceils, std::shared_ptr<Player> player, std::shared_ptr<Enemy> enemy) {
+bool startBattle(const ScreenSize* const screen, std::vector<std::vector<Ceil>>& ceils, std::shared_ptr<Player> player, std::shared_ptr<Enemy> enemy) {
     clear();
 
     int height = screen->yMax;
@@ -93,7 +93,7 @@ int startBattle(const ScreenSize* const screen, std::vector<std::vector<Ceil>>& 
 
     std::vector<std::string> options {"Attack", "Change weapon"};
     int selected_option = 0;
-    int ch = 0; 
+    int ch = 0;
 
     bool battleIsOver = false;
     BattleTurn currentTurn = BattleTurn::PLAYER;
@@ -119,20 +119,27 @@ int startBattle(const ScreenSize* const screen, std::vector<std::vector<Ceil>>& 
                     if (options[selected_option] == "Attack") {
                         int damage = player->attack();
                         enemy->takeDamage(damage);
-                        
+
 
 
                         if (enemy->getHealth() <= 0) {
-                            ceils[enemy->getY() - screen->yMax/2 + FIELD_HEIGHT/2][enemy->getX() - screen->xMax/2 + FIELD_WIDTH/2].setEntity(std::make_shared<Floor>(enemy->getX(), enemy->getY()));
+                            ceils[player->getY() - screen->yMax/2 + FIELD_HEIGHT/2][player->getX() - screen->xMax/2 + FIELD_WIDTH/2].setEntity(std::make_shared<Floor>(enemy->getX(), enemy->getY()));
+                            player->setX(enemy->getX());
+                            player->setY(enemy->getY());
+                            ceils[enemy->getY() - screen->yMax/2 + FIELD_HEIGHT/2][enemy->getX() - screen->xMax/2 + FIELD_WIDTH/2].setEntity(player);
                             battleIsOver = true;
                             battleResult = 1;
                         } else {
                             currentTurn = BattleTurn::ENEMY;
                         }
+                    } else if (options[selected_option] == "Change weapon") {
+                        player->switchMode();
+                        currentTurn = BattleTurn::ENEMY;
                     }
                     break;
             }
         } else if (currentTurn == BattleTurn::ENEMY) {
+            mvprintw(25, 25, "Enemy turn");
             napms(500);
             player->takeDamage(enemy->attack());
 
@@ -149,8 +156,6 @@ int startBattle(const ScreenSize* const screen, std::vector<std::vector<Ceil>>& 
     delwin(pl_bar);
     delwin(en_bar);
     delwin(act_bar);
-
-    //endwin();
 
     return battleResult;
 }

@@ -6,6 +6,7 @@
 #include <Floor.hpp>
 #include <Player.hpp>
 #include <Enemy.hpp>
+#include <EnemyBase.hpp>
 #include <algorithm>
 
 
@@ -18,32 +19,41 @@ Field::Field() : screen(nullptr), width(FIELD_WIDTH), height(FIELD_HEIGHT) {
     }
 }
 
-void Field::init() {
-    for (int i = 0; i < height; i++) {
-        for (int j = 0; j < width; j++) {
-            int xStart = screen->xMax/2 - width/2;
-            int yStart = screen->yMax/2 - height/2;
-            if (i == 0 || i == height - 1 || j == 0 || j == width - 1) {
-                ceils[i][j].setEntity(std::make_shared<Wall>(xStart + j, yStart + i));
-            } else {
-                ceils[i][j].setEntity(std::make_shared<Floor>(xStart + j, yStart + i));
-            }
-        }
-    }
+Field::Field(const Field& other) : ceils(other.ceils), entities(other.entities), screen(other.screen), height(other.height), width(other.width) {}
+
+Field::Field(Field&& other) : ceils(std::move(other.ceils)), entities(std::move(other.entities)), screen(other.screen) {
+    height = other.height;
+    other.height = 0;
+    width = other.width;
+    other.width = 0;
 }
 
-
-
-void Field::draw() const { 
-    for (int i = 0; i < height; i++) {
-        for (int j = 0; j < width; j++) {
-            ceils[i][j].draw();
-        }
+Field& Field::operator=(const Field& other) {
+    if (this != &other) {
+        ceils = other.ceils;
+        entities = other.entities;
+        screen = other.screen;
+        height = other.height;
+        width = other.width;
     }
+    return *this;
 }
 
-void Field::setScreen(const ScreenSize* screen) {
-    this->screen = screen;
+Field& Field::operator=(Field&& other) {
+    if (this != &other) {
+
+        ceils = std::move(other.ceils);
+        entities = std::move(other.entities);
+
+        screen = other.screen;
+
+        height = other.height;
+        width = other.width;
+
+        other.height = 0;
+        other.width = 0;
+    }
+    return *this;
 }
 
 void Field::spawnPlayer() {
@@ -59,7 +69,53 @@ void Field::spawnPlayer() {
     ceils[height/2][width/2].setEntity(player_ptr);
 }
 
-void Field::spawnEnemy() {
+void Field::init() {
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            int xStart = screen->xMax/2 - width/2;
+            int yStart = screen->yMax/2 - height/2;
+
+            if (i == 0 || i == height - 1 || j == 0 || j == width - 1) {
+                ceils[i][j].setEntity(std::make_shared<Wall>(xStart + j, yStart + i));
+            } else {
+                ceils[i][j].setEntity(std::make_shared<Floor>(xStart + j, yStart + i));
+            }
+
+            if (i == 7 && j == 2) {
+                auto enemy_base_ptr = std::make_shared<EnemyBase>(xStart + j, yStart + i);
+                this->entities.push_back(enemy_base_ptr);
+                ceils[i][j].setEntity(enemy_base_ptr);
+            }
+        }
+    }
+}
+
+
+
+void Field::draw() const { 
+    mvprintw(25, 25, "Enemy: %d", entities.size());
+    int counter = 0;
+    for (const auto i : entities) {
+        if (i->getType() == Entity::Type::PLAYER) {
+            mvprintw(26 + counter, 25, "Type: Player", entities.size());
+            mvprintw(25 + counter, 1, "Player X: %d, Y: %d", i->getX() - screen->xMax/2 + FIELD_WIDTH/2, i->getY() - screen->yMax/2 + FIELD_HEIGHT/2);
+        } else {
+            mvprintw(25 + counter, 1, "X: %d, Y: %d", i->getX() - screen->xMax/2 + FIELD_WIDTH/2, i->getY() - screen->yMax/2 + FIELD_HEIGHT/2);
+        }
+        counter++;
+    }
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            ceils[i][j].draw();
+        }
+    }
+}
+
+void Field::setScreen(const ScreenSize* screen) {
+    this->screen = screen;
+}
+
+/*void Field::spawnEnemy() {
     int xStart = screen->xMax/2 - width/2;
     int yStart = screen->yMax/2 - height/2;
 
@@ -68,7 +124,7 @@ void Field::spawnEnemy() {
     this->entities.push_back(enemy_ptr);
 
     ceils[1][1].setEntity(enemy_ptr);
-}
+}*/
 
 bool Field::update(int ch) { 
     std::shared_ptr<Player> player_ptr = nullptr;
@@ -87,17 +143,7 @@ bool Field::update(int ch) {
         }
     }
 
-    /*if (player_ptr) {
-        for (const auto& entity : entities) {
-            if (entity->getType() == Entity::Type::ENEMY) {
-                if (entity->getHealth() > 0) {
-                    std::shared_ptr<Enemy> enemy_ptr = std::static_pointer_cast<Enemy>(entity);
-                    enemy_ptr->update(ceils, screen, player_ptr, height, width);
-                }
-            }
-        }
-    }*/
-
+    player_ptr->resetAttackFlag();
     if (player_ptr) {
         for (int i = 0; i < entities.size(); i++) {
             if (entities[i]->getType() == Entity::Type::ENEMY) {
@@ -111,7 +157,13 @@ bool Field::update(int ch) {
         }
     }
 
-
+    for (const auto& entity : entities) {
+        if (entity->getType() == Entity::Type::ENEMY_BASE) {
+            std::static_pointer_cast<EnemyBase>(entity)->spawnEnemy(ceils, entities, screen, height, width);
+            break;
+        }
+    }
 
     return true;
 }
+

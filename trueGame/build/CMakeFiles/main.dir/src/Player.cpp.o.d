@@ -1,169 +1,133 @@
 CMakeFiles/main.dir/src/Player.cpp.o: \
- /home/con2222/repos/ncurses-game/trueGame/src/Player.cpp \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/stdc-predef.h \
- /home/con2222/repos/ncurses-game/trueGame/include/Player.hpp \
- /home/con2222/repos/ncurses-game/trueGame/include/Entity.hpp \
- /home/con2222/repos/ncurses-game/trueGame/include/ScreenSize.hpp \
- /nix/store/0cjxn9v10y6ywv9yfdb50dzr84xhpxhl-ncurses-6.5-dev/include/curses.h \
- /nix/store/0cjxn9v10y6ywv9yfdb50dzr84xhpxhl-ncurses-6.5-dev/include/ncurses_dll.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stdint.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/stdint.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/libc-header-start.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/features.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/features-time64.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/wordsize.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/timesize.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/sys/cdefs.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/long-double.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/gnu/stubs.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/gnu/stubs-64.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/typesizes.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/time64.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/wchar.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/stdint-intn.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/stdint-uintn.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/stdint-least.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/stdio.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stddef.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stdarg.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/__fpos_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/__mbstate_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/__fpos64_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/__FILE.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/FILE.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/struct_FILE.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/cookie_io_functions_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/stdio_lim.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/floatn.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/floatn-common.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/stdio2-decl.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/stdio.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/stdio2.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/wchar.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/wint_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/mbstate_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/locale_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/__locale_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/wchar2-decl.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/wchar2.h \
- /nix/store/0cjxn9v10y6ywv9yfdb50dzr84xhpxhl-ncurses-6.5-dev/include/unctrl.h \
- /nix/store/0cjxn9v10y6ywv9yfdb50dzr84xhpxhl-ncurses-6.5-dev/include/curses.h \
- /home/con2222/repos/ncurses-game/trueGame/include/Ceil.hpp \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/memory \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/memoryfwd.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/x86_64-unknown-linux-gnu/bits/c++config.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/x86_64-unknown-linux-gnu/bits/os_defines.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/pstl/pstl_config.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/allocator.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/x86_64-unknown-linux-gnu/bits/c++allocator.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/new_allocator.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/new \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/exception.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/version.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/functexcept.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/exception_defines.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/move.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/type_traits \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/stl_tempbuf.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/stl_construct.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/stl_iterator_base_types.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/stl_iterator_base_funcs.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/concept_check.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/debug/assertions.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/stl_pair.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/utility.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/ext/numeric_traits.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/cpp_type_traits.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/ext/type_traits.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/stl_uninitialized.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/stl_algobase.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/stl_iterator.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/ptr_traits.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/debug/debug.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/predefined_ops.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bit \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/concepts \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/ext/alloc_traits.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/alloc_traits.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/stl_raw_storage_iter.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/align.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/uses_allocator.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/unique_ptr.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/tuple \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/invoke.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/stl_function.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/backward/binders.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/functional_hash.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/hash_bytes.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/shared_ptr.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/iosfwd \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/requires_hosted.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/stringfwd.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/postypes.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/cwchar \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/shared_ptr_base.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/typeinfo \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/allocated_ptr.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/refwrap.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/ext/aligned_buffer.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/ext/atomicity.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/x86_64-unknown-linux-gnu/bits/gthr.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/x86_64-unknown-linux-gnu/bits/gthr-default.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/pthread.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/sched.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/time_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/struct_timespec.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/endian.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/endianness.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/sched.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/struct_sched_param.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/cpu-set.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/time.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/time.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/timex.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/struct_timeval.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/clock_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/struct_tm.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/clockid_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/timer_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/struct_itimerspec.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/pthreadtypes.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/thread-shared-types.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/pthreadtypes-arch.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/atomic_wide_counter.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/struct_mutex.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/struct_rwlock.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/setjmp.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/__sigset_t.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/types/struct___jmp_buf_tag.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/bits/pthread_stack_min-dynamic.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/x86_64-unknown-linux-gnu/bits/atomic_word.h \
- /nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/sys/single_threaded.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/ext/concurrence.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/exception \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/exception_ptr.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/cxxabi_init_exception.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/nested_exception.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/shared_ptr_atomic.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/atomic_base.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/atomic_lockfree_defines.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/backward/auto_ptr.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/pstl/glue_memory_defs.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/pstl/execution_defs.h \
- /home/con2222/repos/ncurses-game/trueGame/include/Constants.hpp \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/vector \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/stl_vector.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/initializer_list \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/stl_bvector.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/range_access.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/vector.tcc \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/memory_resource.h \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/cstddef \
- /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/include/c++/14.3.0/bits/uses_allocator_args.h \
- /home/con2222/repos/ncurses-game/trueGame/include/LivingEntity.hpp \
- /home/con2222/repos/ncurses-game/trueGame/include/Color.hpp \
- /home/con2222/repos/ncurses-game/trueGame/include/Floor.hpp \
- /home/con2222/repos/ncurses-game/trueGame/include/GameLogic.hpp \
- /home/con2222/repos/ncurses-game/trueGame/include/Enemy.hpp
+ /home/con2222/ncurses-game/trueGame/src/Player.cpp \
+ /usr/include/stdc-predef.h \
+ /home/con2222/ncurses-game/trueGame/include/Player.hpp \
+ /home/con2222/ncurses-game/trueGame/include/Entity.hpp \
+ /home/con2222/ncurses-game/trueGame/include/ScreenSize.hpp \
+ /usr/include/curses.h /usr/include/ncurses_dll.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/libc-header-start.h \
+ /usr/include/features.h /usr/include/features-time64.h \
+ /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/long-double.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/bits/time64.h /usr/include/bits/wchar.h \
+ /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
+ /usr/include/bits/stdint-least.h /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
+ /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__mbstate_t.h \
+ /usr/include/bits/types/__fpos64_t.h /usr/include/bits/types/__FILE.h \
+ /usr/include/bits/types/FILE.h /usr/include/bits/types/struct_FILE.h \
+ /usr/include/bits/types/cookie_io_functions_t.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/floatn.h \
+ /usr/include/bits/floatn-common.h /usr/include/wchar.h \
+ /usr/include/bits/types/wint_t.h /usr/include/bits/types/mbstate_t.h \
+ /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
+ /usr/include/unctrl.h /usr/include/curses.h \
+ /home/con2222/ncurses-game/trueGame/include/Ceil.hpp \
+ /usr/include/c++/15.2.1/memory /usr/include/c++/15.2.1/bits/memoryfwd.h \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/cpu_defines.h \
+ /usr/include/c++/15.2.1/pstl/pstl_config.h \
+ /usr/include/c++/15.2.1/bits/allocator.h \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++allocator.h \
+ /usr/include/c++/15.2.1/bits/new_allocator.h /usr/include/c++/15.2.1/new \
+ /usr/include/c++/15.2.1/bits/exception.h \
+ /usr/include/c++/15.2.1/bits/version.h \
+ /usr/include/c++/15.2.1/bits/functexcept.h \
+ /usr/include/c++/15.2.1/bits/exception_defines.h \
+ /usr/include/c++/15.2.1/bits/move.h /usr/include/c++/15.2.1/type_traits \
+ /usr/include/c++/15.2.1/bits/stl_tempbuf.h \
+ /usr/include/c++/15.2.1/bits/stl_construct.h \
+ /usr/include/c++/15.2.1/bits/stl_iterator_base_types.h \
+ /usr/include/c++/15.2.1/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/15.2.1/bits/concept_check.h \
+ /usr/include/c++/15.2.1/debug/assertions.h \
+ /usr/include/c++/15.2.1/bits/stl_pair.h \
+ /usr/include/c++/15.2.1/bits/utility.h \
+ /usr/include/c++/15.2.1/ext/numeric_traits.h \
+ /usr/include/c++/15.2.1/bits/cpp_type_traits.h \
+ /usr/include/c++/15.2.1/ext/type_traits.h \
+ /usr/include/c++/15.2.1/bits/stl_uninitialized.h \
+ /usr/include/c++/15.2.1/bits/ptr_traits.h \
+ /usr/include/c++/15.2.1/bits/stl_algobase.h \
+ /usr/include/c++/15.2.1/bits/stl_iterator.h \
+ /usr/include/c++/15.2.1/debug/debug.h \
+ /usr/include/c++/15.2.1/bits/predefined_ops.h \
+ /usr/include/c++/15.2.1/bit /usr/include/c++/15.2.1/concepts \
+ /usr/include/c++/15.2.1/ext/alloc_traits.h \
+ /usr/include/c++/15.2.1/bits/alloc_traits.h \
+ /usr/include/c++/15.2.1/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/15.2.1/bits/align.h \
+ /usr/include/c++/15.2.1/bits/uses_allocator.h \
+ /usr/include/c++/15.2.1/bits/unique_ptr.h /usr/include/c++/15.2.1/tuple \
+ /usr/include/c++/15.2.1/bits/invoke.h \
+ /usr/include/c++/15.2.1/bits/stl_function.h \
+ /usr/include/c++/15.2.1/backward/binders.h \
+ /usr/include/c++/15.2.1/bits/functional_hash.h \
+ /usr/include/c++/15.2.1/bits/hash_bytes.h \
+ /usr/include/c++/15.2.1/bits/shared_ptr.h /usr/include/c++/15.2.1/iosfwd \
+ /usr/include/c++/15.2.1/bits/requires_hosted.h \
+ /usr/include/c++/15.2.1/bits/stringfwd.h \
+ /usr/include/c++/15.2.1/bits/postypes.h /usr/include/c++/15.2.1/cwchar \
+ /usr/include/c++/15.2.1/bits/shared_ptr_base.h \
+ /usr/include/c++/15.2.1/typeinfo \
+ /usr/include/c++/15.2.1/bits/allocated_ptr.h \
+ /usr/include/c++/15.2.1/bits/refwrap.h \
+ /usr/include/c++/15.2.1/ext/aligned_buffer.h \
+ /usr/include/c++/15.2.1/ext/atomicity.h \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/gthr.h \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/bits/types/time_t.h \
+ /usr/include/bits/types/struct_timespec.h /usr/include/bits/endian.h \
+ /usr/include/bits/endianness.h /usr/include/bits/sched.h \
+ /usr/include/linux/sched/types.h /usr/include/linux/types.h \
+ /usr/include/asm/types.h /usr/include/asm-generic/types.h \
+ /usr/include/asm-generic/int-ll64.h /usr/include/asm/bitsperlong.h \
+ /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
+ /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
+ /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
+ /usr/include/bits/types/struct_sched_param.h /usr/include/bits/cpu-set.h \
+ /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/timex.h \
+ /usr/include/bits/types/struct_timeval.h \
+ /usr/include/bits/types/clock_t.h /usr/include/bits/types/struct_tm.h \
+ /usr/include/bits/types/clockid_t.h /usr/include/bits/types/timer_t.h \
+ /usr/include/bits/types/struct_itimerspec.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
+ /usr/include/bits/pthreadtypes-arch.h \
+ /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \
+ /usr/include/bits/struct_rwlock.h /usr/include/bits/setjmp.h \
+ /usr/include/bits/types/__sigset_t.h \
+ /usr/include/bits/types/struct___jmp_buf_tag.h \
+ /usr/include/bits/pthread_stack_min-dynamic.h \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
+ /usr/include/sys/single_threaded.h \
+ /usr/include/c++/15.2.1/ext/concurrence.h \
+ /usr/include/c++/15.2.1/exception \
+ /usr/include/c++/15.2.1/bits/exception_ptr.h \
+ /usr/include/c++/15.2.1/bits/cxxabi_init_exception.h \
+ /usr/include/c++/15.2.1/bits/nested_exception.h \
+ /usr/include/c++/15.2.1/bits/shared_ptr_atomic.h \
+ /usr/include/c++/15.2.1/bits/atomic_base.h \
+ /usr/include/c++/15.2.1/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/15.2.1/backward/auto_ptr.h \
+ /usr/include/c++/15.2.1/pstl/glue_memory_defs.h \
+ /usr/include/c++/15.2.1/pstl/execution_defs.h \
+ /home/con2222/ncurses-game/trueGame/include/Constants.hpp \
+ /usr/include/c++/15.2.1/vector /usr/include/c++/15.2.1/bits/stl_vector.h \
+ /usr/include/c++/15.2.1/initializer_list \
+ /usr/include/c++/15.2.1/bits/stl_bvector.h \
+ /usr/include/c++/15.2.1/bits/range_access.h \
+ /usr/include/c++/15.2.1/bits/vector.tcc \
+ /usr/include/c++/15.2.1/bits/memory_resource.h \
+ /usr/include/c++/15.2.1/cstddef \
+ /usr/include/c++/15.2.1/bits/uses_allocator_args.h \
+ /home/con2222/ncurses-game/trueGame/include/LivingEntity.hpp \
+ /home/con2222/ncurses-game/trueGame/include/Color.hpp \
+ /home/con2222/ncurses-game/trueGame/include/Floor.hpp \
+ /home/con2222/ncurses-game/trueGame/include/GameLogic.hpp \
+ /home/con2222/ncurses-game/trueGame/include/Enemy.hpp

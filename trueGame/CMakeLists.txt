@@ -6,11 +6,11 @@ set(CMAKE_CXX_STANDARD 17)
 find_package(Curses REQUIRED)
 include_directories(${CURSES_INCLUDE_DIR} include)
 
-add_executable(main 
+add_executable(main
     main.cpp
     src/Field.cpp
     src/Game.cpp
-    src/Ceil.cpp  
+    src/Ceil.cpp
     src/Color.cpp
     src/Wall.cpp
     src/Floor.cpp
@@ -20,6 +20,7 @@ add_executable(main
     src/GameLogic.cpp
     src/Utils.cpp
     src/LivingEntity.cpp
+    src/EnemyBase.cpp
 )
 
 target_link_libraries(main ${CURSES_LIBRARIES})

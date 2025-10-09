@@ -1,7 +1,7 @@
 main: \
-  /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/crt1.o \
-  /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/crti.o \
-  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/crtbegin.o \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o \
   CMakeFiles/main.dir/main.cpp.o \
   CMakeFiles/main.dir/src/Field.cpp.o \
   CMakeFiles/main.dir/src/Game.cpp.o \
@@ -15,41 +15,48 @@ main: \
   CMakeFiles/main.dir/src/GameLogic.cpp.o \
   CMakeFiles/main.dir/src/Utils.cpp.o \
   CMakeFiles/main.dir/src/LivingEntity.cpp.o \
-  /nix/store/yw7vb4hamv9mqgbgf7598zvis7k2spyx-ncurses-6.5/lib/libncurses.so \
-  /nix/store/yw7vb4hamv9mqgbgf7598zvis7k2spyx-ncurses-6.5/lib/libform.so \
-  /nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libstdc++.so \
-  /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libm.so \
-  /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libm.so \
-  /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libm.so \
-  /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libm.so.6 \
-  /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libmvec.so.1 \
-  /nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so \
-  /nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so \
-  /nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so \
-  /nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so.1 \
-  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/libgcc.a \
-  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/libgcc.a \
-  /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so \
-  /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so \
-  /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so \
-  /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so.6 \
-  /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc_nonshared.a \
-  /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/ld-linux-x86-64.so.2 \
-  /nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so \
-  /nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so \
-  /nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so \
-  /nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so.1 \
-  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/libgcc.a \
-  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/libgcc.a \
-  /nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/crtend.o \
-  /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/crtn.o \
-  /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/ld-linux-x86-64.so.2
+  CMakeFiles/main.dir/src/EnemyBase.cpp.o \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libcurses.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libcurses.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libcurses.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libncursesw.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libform.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libform.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libform.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libformw.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
+  /usr/lib/libm.so.6 \
+  /usr/lib/libmvec.so.1 \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so.1 \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libc.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libc.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libc.so \
+  /usr/lib/libc.so.6 \
+  /usr/lib/libc_nonshared.a \
+  /usr/lib/ld-linux-x86-64.so.2 \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so.1 \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o \
+  /usr/lib/ld-linux-x86-64.so.2
 
-/nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/crt1.o:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o:
 
-/nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/crti.o:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o:
 
-/nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/crtbegin.o:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o:
 
 CMakeFiles/main.dir/main.cpp.o:
 
@@ -77,60 +84,74 @@ CMakeFiles/main.dir/src/Utils.cpp.o:
 
 CMakeFiles/main.dir/src/LivingEntity.cpp.o:
 
-/nix/store/yw7vb4hamv9mqgbgf7598zvis7k2spyx-ncurses-6.5/lib/libncurses.so:
+CMakeFiles/main.dir/src/EnemyBase.cpp.o:
 
-/nix/store/yw7vb4hamv9mqgbgf7598zvis7k2spyx-ncurses-6.5/lib/libform.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libcurses.so:
 
-/nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libstdc++.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libcurses.so:
 
-/nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libm.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libcurses.so:
 
-/nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libm.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libncursesw.so:
 
-/nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libm.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libform.so:
 
-/nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libm.so.6:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libform.so:
 
-/nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libmvec.so.1:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libform.so:
 
-/nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libformw.so:
 
-/nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so:
 
-/nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so:
 
-/nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so.1:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so:
 
-/nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/libgcc.a:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so:
 
-/nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/libgcc.a:
+/usr/lib/libm.so.6:
 
-/nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so:
+/usr/lib/libmvec.so.1:
 
-/nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so:
 
-/nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so:
 
-/nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so.6:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so:
 
-/nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc_nonshared.a:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so.1:
 
-/nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/ld-linux-x86-64.so.2:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a:
 
-/nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a:
 
-/nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libc.so:
 
-/nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libc.so:
 
-/nix/store/dj06r96j515npcqi9d8af1d1c60bx2vn-gcc-14.3.0-lib/lib/libgcc_s.so.1:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libc.so:
 
-/nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/libgcc.a:
+/usr/lib/libc.so.6:
 
-/nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/libgcc.a:
+/usr/lib/libc_nonshared.a:
 
-/nix/store/8adzgnxs3s0pbj22qhk9zjxi1fqmz3xv-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/crtend.o:
+/usr/lib/ld-linux-x86-64.so.2:
 
-/nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/crtn.o:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so:
 
-/nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/ld-linux-x86-64.so.2:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so.1:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o:
+
+/usr/lib/ld-linux-x86-64.so.2:

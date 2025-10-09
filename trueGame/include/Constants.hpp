@@ -13,14 +13,42 @@ constexpr char FLOOR = ' ';
 constexpr char WALL = '#';
 constexpr char PLAYER = 'K';
 constexpr char ENEMY = 'X';
+constexpr char ENEMY_BASE = 'B';
+constexpr char SPIKED_TRAP = '^';
 
-constexpr int PL_HEALTH = 10;
-constexpr int PL_DAMAGE = 5;
+constexpr int PL_HEALTH = 1000;
+constexpr int PL_DAMAGE = 500;
 constexpr int MELEE_MODE = 0;
-constexpr int RANGE_MODE = 0;
+constexpr int MELEE_DAMAGE = 5;
+constexpr int RANGE_MODE = 1;
+constexpr int RANGE_DAMAGE = 3;
 
+constexpr int EN_BASE_HP = 10;
 constexpr int EN_HEALTH = 20;
 constexpr int EN_DAMAGE = 5;
+
+constexpr int WALLS_COUNT = 10;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*const char* ascii_art = R"(
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⢰⠀⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀

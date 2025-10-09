@@ -1,8 +1,8 @@
-# Install script for directory: /home/con2222/repos/ncurses-game/trueGame
+# Install script for directory: /home/con2222/ncurses-game/trueGame
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/var/empty/local")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,13 +39,13 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/objdump")
+  set(CMAKE_OBJDUMP "/usr/sbin/objdump")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/con2222/repos/ncurses-game/trueGame/build/install_local_manifest.txt"
+  file(WRITE "/home/con2222/ncurses-game/trueGame/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -61,6 +61,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/con2222/repos/ncurses-game/trueGame/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/con2222/ncurses-game/trueGame/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

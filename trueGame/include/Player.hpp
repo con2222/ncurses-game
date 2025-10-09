@@ -13,9 +13,14 @@ public:
     int attack();
     virtual void draw() const override;
     void takeDamage(int amount);
+    void resetAttackFlag();
+    bool getWasAttacked() const;
+    void setWasAttacked(bool val);
+    void switchMode();
     bool getMode();
 private:
     int damage;
     bool weaponMode;
+    bool wasAttacked = false;
     char sprite = PLAYER;
 }; 

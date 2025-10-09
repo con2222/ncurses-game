@@ -12,7 +12,7 @@ Player::Player(int x, int y) : LivingEntity(x, y, Entity::Type::PLAYER, PL_HEALT
 void Player::handleInput(std::vector<std::vector<Ceil>>& ceils, int ch, const ScreenSize* screen, int height, int width) {
     int nextX = x;
     int nextY = y;
-    
+
     switch (ch) {
         case UP:
             if (nextY > screen->yMax/2 - height/2 + 1) nextY--;
@@ -25,7 +25,7 @@ void Player::handleInput(std::vector<std::vector<Ceil>>& ceils, int ch, const Sc
             break;
         case RIGHT:
               if (nextX < screen->xMax/2 + width/2 - 2) nextX++;
-            break; 
+            break;
         default:
             break;
     }
@@ -36,17 +36,15 @@ void Player::handleInput(std::vector<std::vector<Ceil>>& ceils, int ch, const Sc
         y = nextY;
         ceils[y - screen->yMax/2 + height/2][x - screen->xMax/2 + width/2].setEntity(shared_from_this());
     } else if (ceils[nextY - screen->yMax/2 + height/2][nextX - screen->xMax/2 + width/2].getEntity()->getType() == Entity::Type::ENEMY) {
-        startBattle(screen, ceils, std::static_pointer_cast<Player>(shared_from_this()), std::static_pointer_cast<Enemy>(ceils[nextY - screen->yMax/2 + height/2][nextX - screen->xMax/2 + width/2].getEntity()));
+        wasAttacked = true;
+        bool isWin = startBattle(screen, ceils, std::static_pointer_cast<Player>(shared_from_this()), std::static_pointer_cast<Enemy>(ceils[nextY - screen->yMax/2 + height/2][nextX - screen->xMax/2 + width/2].getEntity()));
     }
 }
 
 void Player::draw() const {
-    attron(COLOR_PAIR(static_cast<int>(ColorPair::PLAYER)) | A_BOLD);
     mvaddch(y, x, sprite);
-    attroff(COLOR_PAIR(static_cast<int>(ColorPair::PLAYER)) | A_BOLD);
 
     mvprintw(4, 4, "%d", health);
-
 }
 
 void Player::takeDamage(int amount) {
@@ -60,3 +58,19 @@ int Player::attack() {
 bool Player::getMode() {
     return weaponMode;
 }
+
+void Player::switchMode() {
+    if (weaponMode == MELEE_MODE) {
+        weaponMode = RANGE_MODE;
+        damage = RANGE_DAMAGE;
+    } else {
+        weaponMode = MELEE_MODE;
+        damage = MELEE_DAMAGE;
+    }
+}
+
+void Player::resetAttackFlag() {wasAttacked = false;}
+
+bool Player::getWasAttacked() const {return wasAttacked;}
+
+void Player::setWasAttacked(bool val) {wasAttacked = val;}

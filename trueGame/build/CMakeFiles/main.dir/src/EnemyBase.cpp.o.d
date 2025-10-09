@@ -1,8 +1,8 @@
-CMakeFiles/main.dir/src/Field.cpp.o: \
- /home/con2222/ncurses-game/trueGame/src/Field.cpp \
+CMakeFiles/main.dir/src/EnemyBase.cpp.o: \
+ /home/con2222/ncurses-game/trueGame/src/EnemyBase.cpp \
  /usr/include/stdc-predef.h \
- /home/con2222/ncurses-game/trueGame/include/Field.hpp \
- /home/con2222/ncurses-game/trueGame/include/Ceil.hpp \
+ /home/con2222/ncurses-game/trueGame/include/EnemyBase.hpp \
+ /home/con2222/ncurses-game/trueGame/include/LivingEntity.hpp \
  /home/con2222/ncurses-game/trueGame/include/Entity.hpp \
  /home/con2222/ncurses-game/trueGame/include/ScreenSize.hpp \
  /usr/include/curses.h /usr/include/ncurses_dll.h \
@@ -117,6 +117,10 @@ CMakeFiles/main.dir/src/Field.cpp.o: \
  /usr/include/c++/15.2.1/backward/auto_ptr.h \
  /usr/include/c++/15.2.1/pstl/glue_memory_defs.h \
  /usr/include/c++/15.2.1/pstl/execution_defs.h \
+ /home/con2222/ncurses-game/trueGame/include/Enemy.hpp \
+ /home/con2222/ncurses-game/trueGame/include/Constants.hpp \
+ /home/con2222/ncurses-game/trueGame/include/Player.hpp \
+ /home/con2222/ncurses-game/trueGame/include/Ceil.hpp \
  /usr/include/c++/15.2.1/vector /usr/include/c++/15.2.1/bits/stl_vector.h \
  /usr/include/c++/15.2.1/initializer_list \
  /usr/include/c++/15.2.1/bits/stl_bvector.h \
@@ -125,24 +129,56 @@ CMakeFiles/main.dir/src/Field.cpp.o: \
  /usr/include/c++/15.2.1/bits/memory_resource.h \
  /usr/include/c++/15.2.1/cstddef \
  /usr/include/c++/15.2.1/bits/uses_allocator_args.h \
- /home/con2222/ncurses-game/trueGame/include/LivingEntity.hpp \
- /home/con2222/ncurses-game/trueGame/include/Color.hpp \
- /home/con2222/ncurses-game/trueGame/include/Constants.hpp \
- /home/con2222/ncurses-game/trueGame/include/Wall.hpp \
- /home/con2222/ncurses-game/trueGame/include/Floor.hpp \
- /home/con2222/ncurses-game/trueGame/include/Player.hpp \
- /home/con2222/ncurses-game/trueGame/include/Enemy.hpp \
- /home/con2222/ncurses-game/trueGame/include/EnemyBase.hpp \
- /usr/include/c++/15.2.1/algorithm \
- /usr/include/c++/15.2.1/bits/stl_algo.h \
- /usr/include/c++/15.2.1/bits/algorithmfwd.h \
- /usr/include/c++/15.2.1/bits/stl_heap.h \
+ /usr/include/c++/15.2.1/random /usr/include/c++/15.2.1/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/15.2.1/bits/std_abs.h \
+ /usr/include/stdlib.h /usr/include/bits/waitflags.h \
+ /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
+ /usr/include/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/bits/uintn-identity.h /usr/include/sys/select.h \
+ /usr/include/bits/select.h /usr/include/bits/types/sigset_t.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/c++/15.2.1/bits/specfun.h /usr/include/c++/15.2.1/limits \
+ /usr/include/c++/15.2.1/tr1/gamma.tcc \
+ /usr/include/c++/15.2.1/tr1/special_function_util.h \
+ /usr/include/c++/15.2.1/tr1/bessel_function.tcc \
+ /usr/include/c++/15.2.1/tr1/beta_function.tcc \
+ /usr/include/c++/15.2.1/tr1/ell_integral.tcc \
+ /usr/include/c++/15.2.1/tr1/exp_integral.tcc \
+ /usr/include/c++/15.2.1/tr1/hypergeometric.tcc \
+ /usr/include/c++/15.2.1/tr1/legendre_function.tcc \
+ /usr/include/c++/15.2.1/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/15.2.1/tr1/poly_hermite.tcc \
+ /usr/include/c++/15.2.1/tr1/poly_laguerre.tcc \
+ /usr/include/c++/15.2.1/tr1/riemann_zeta.tcc \
+ /usr/include/c++/15.2.1/cstdint /usr/include/c++/15.2.1/cstdlib \
+ /usr/include/c++/15.2.1/string \
+ /usr/include/c++/15.2.1/bits/char_traits.h \
+ /usr/include/c++/15.2.1/bits/localefwd.h \
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++locale.h \
+ /usr/include/c++/15.2.1/clocale /usr/include/locale.h \
+ /usr/include/bits/locale.h /usr/include/c++/15.2.1/cctype \
+ /usr/include/ctype.h /usr/include/c++/15.2.1/bits/ostream_insert.h \
+ /usr/include/c++/15.2.1/bits/cxxabi_forced.h \
+ /usr/include/c++/15.2.1/bits/basic_string.h \
+ /usr/include/c++/15.2.1/string_view \
+ /usr/include/c++/15.2.1/bits/string_view.tcc \
+ /usr/include/c++/15.2.1/ext/string_conversions.h \
+ /usr/include/c++/15.2.1/cstdio /usr/include/c++/15.2.1/cerrno \
+ /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/bits/types/error_t.h \
+ /usr/include/c++/15.2.1/bits/charconv.h \
+ /usr/include/c++/15.2.1/bits/basic_string.tcc \
+ /usr/include/c++/15.2.1/bits/random.h \
  /usr/include/c++/15.2.1/bits/uniform_int_dist.h \
- /usr/include/c++/15.2.1/cstdlib /usr/include/stdlib.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/sys/types.h /usr/include/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/types/sigset_t.h /usr/include/alloca.h \
- /usr/include/bits/stdlib-float.h /usr/include/c++/15.2.1/bits/std_abs.h \
- /usr/include/c++/15.2.1/pstl/glue_algorithm_defs.h
+ /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/opt_random.h \
+ /usr/include/c++/15.2.1/bits/random.tcc /usr/include/c++/15.2.1/numeric \
+ /usr/include/c++/15.2.1/bits/stl_numeric.h \
+ /usr/include/c++/15.2.1/pstl/glue_numeric_defs.h

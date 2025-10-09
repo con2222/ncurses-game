@@ -9,6 +9,8 @@ public:
         WALL,
         PLAYER,
         ENEMY,
+        ENEMY_BASE,
+        SPIKED_TRAP,
     };
     Entity(int x, int y, Type type);
     int getY() const;
