@@ -25,7 +25,7 @@ public:
     void setScreen(const ScreenSize* screen);
     void init();
     void spawnPlayer();
-    //void spawnEnemy();
+    void spawnEnemy();
     
     bool update(int ch);
 };

@@ -16,11 +16,15 @@ public:
     void resetAttackFlag();
     bool getWasAttacked() const;
     void setWasAttacked(bool val);
+    bool getInTrap();
+    void setInTrap();
+    void unSetInTrap();
     void switchMode();
     bool getMode();
 private:
     int damage;
     bool weaponMode;
     bool wasAttacked = false;
+    bool inTrap = false;
     char sprite = PLAYER;
 }; 

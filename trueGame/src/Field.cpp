@@ -7,6 +7,7 @@
 #include <Player.hpp>
 #include <Enemy.hpp>
 #include <EnemyBase.hpp>
+#include <SpikedTrap.hpp>
 #include <algorithm>
 
 
@@ -86,6 +87,11 @@ void Field::init() {
                 this->entities.push_back(enemy_base_ptr);
                 ceils[i][j].setEntity(enemy_base_ptr);
             }
+
+            if (i == 7 && j == 10) {
+                auto spiked_trap_ptr = std::make_shared<SpikedTrap>(xStart + j, yStart + i);
+                ceils[i][j].setEntity(spiked_trap_ptr);
+            }
         }
     }
 }
@@ -99,6 +105,9 @@ void Field::draw() const {
         if (i->getType() == Entity::Type::PLAYER) {
             mvprintw(26 + counter, 25, "Type: Player", entities.size());
             mvprintw(25 + counter, 1, "Player X: %d, Y: %d", i->getX() - screen->xMax/2 + FIELD_WIDTH/2, i->getY() - screen->yMax/2 + FIELD_HEIGHT/2);
+            auto player_ptr = std::static_pointer_cast<Player>(i);
+            mvprintw(15, 15, "Trapped: %d", player_ptr->getInTrap());
+            mvprintw(16, 16, "Weapon mode: %d", player_ptr->getMode()); 
         } else {
             mvprintw(25 + counter, 1, "X: %d, Y: %d", i->getX() - screen->xMax/2 + FIELD_WIDTH/2, i->getY() - screen->yMax/2 + FIELD_HEIGHT/2);
         }
@@ -115,7 +124,7 @@ void Field::setScreen(const ScreenSize* screen) {
     this->screen = screen;
 }
 
-/*void Field::spawnEnemy() {
+void Field::spawnEnemy() {
     int xStart = screen->xMax/2 - width/2;
     int yStart = screen->yMax/2 - height/2;
 
@@ -124,7 +133,7 @@ void Field::setScreen(const ScreenSize* screen) {
     this->entities.push_back(enemy_ptr);
 
     ceils[1][1].setEntity(enemy_ptr);
-}*/
+}
 
 bool Field::update(int ch) { 
     std::shared_ptr<Player> player_ptr = nullptr;
@@ -133,7 +142,11 @@ bool Field::update(int ch) {
             if (entity->getHealth() > 0) {
                 player_ptr = std::static_pointer_cast<Player>(entity);
                 if (ch != ERR) {
-                    player_ptr->handleInput(ceils, ch, screen, height, width); 
+                    if (!player_ptr->getInTrap()) {
+                        player_ptr->handleInput(ceils, ch, screen, height, width); 
+                    } else {
+                        player_ptr->unSetInTrap();
+                    }
                 }
                 break; 
             } else {
@@ -157,12 +170,12 @@ bool Field::update(int ch) {
         }
     }
 
-    for (const auto& entity : entities) {
+    /*for (const auto& entity : entities) {
         if (entity->getType() == Entity::Type::ENEMY_BASE) {
             std::static_pointer_cast<EnemyBase>(entity)->spawnEnemy(ceils, entities, screen, height, width);
             break;
         }
-    }
+    }*/
 
     return true;
 }

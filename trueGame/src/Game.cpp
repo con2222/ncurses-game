@@ -30,7 +30,7 @@ void Game::start() {
 
     field.init();
     field.spawnPlayer();
-    //field.spawnEnemy();
+    field.spawnEnemy();
     field.draw();
     int ch;
 
