@@ -3,6 +3,7 @@
 #include <Color.hpp>
 #include <Wall.hpp>
 #include <Floor.hpp>
+#include <Menu.hpp>
 
 Game::Game() : field() {}
 
@@ -22,35 +23,40 @@ void Game::initScreen() {
 }
 
 void Game::cleanup() {
+    clear();
     endwin();
 }
 
 void Game::start() {
     initScreen();
 
+    bool choice = 0;
+
     field.init();
     field.spawnPlayer();
     field.spawnEnemy();
     field.draw();
-    int ch;
+    Menu menu(screen.yMax, screen.xMax);
+    choice = menu.init();
+    //menu.deinit();
+    if (choice) {
+        int ch;
+        bool playerIsAlive = 1;
+        while (true) {
+            ch = getch();
+            if (ch == 'q') {break;}
+            playerIsAlive = field.update(ch);
 
-    bool playerIsAlive = 1;
+            if (playerIsAlive == 0) {
+                break;
+            }
+            clear();
 
-    while (true) {
-        ch = getch();
-        if (ch == 'q') {break;}
-        playerIsAlive = field.update(ch);
+            field.draw();
 
-        if (playerIsAlive == 0) {
-            break;
+            refresh();
         }
-        clear();
-
-        field.draw();
-
-        refresh();
     }
-
+    menu.deinit();
     cleanup();
-
 }

@@ -22,6 +22,8 @@ add_executable(main
     src/LivingEntity.cpp
     src/EnemyBase.cpp
     src/SpikedTrap.cpp
+    src/Window.cpp
+    src/Menu.cpp
 )
 
 target_link_libraries(main ${CURSES_LIBRARIES})

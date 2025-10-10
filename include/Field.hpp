@@ -11,6 +11,7 @@ class Field {
     const ScreenSize* screen;
     int height;
     int width;
+    size_t turnCounter;
 public:
     Field();
     Field(const Field& other);

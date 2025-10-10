@@ -71,26 +71,48 @@ void Field::spawnPlayer() {
 }
 
 void Field::init() {
+    int xStart = screen->xMax / 2 - width / 2;
+    int yStart = screen->yMax / 2 - height / 2;
+
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
-            int xStart = screen->xMax/2 - width/2;
-            int yStart = screen->yMax/2 - height/2;
-
             if (i == 0 || i == height - 1 || j == 0 || j == width - 1) {
                 ceils[i][j].setEntity(std::make_shared<Wall>(xStart + j, yStart + i));
             } else {
                 ceils[i][j].setEntity(std::make_shared<Floor>(xStart + j, yStart + i));
             }
+        }
+    }
 
-            if (i == 7 && j == 2) {
-                auto enemy_base_ptr = std::make_shared<EnemyBase>(xStart + j, yStart + i);
-                this->entities.push_back(enemy_base_ptr);
-                ceils[i][j].setEntity(enemy_base_ptr);
-            }
+    if (height > 8 && width > 3) {
+        auto enemy_base_ptr = std::make_shared<EnemyBase>(xStart + 2, yStart + 7);
+        entities.push_back(enemy_base_ptr);
+        ceils[7][2].setEntity(enemy_base_ptr);
+    }
 
-            if (i == 7 && j == 10) {
-                auto spiked_trap_ptr = std::make_shared<SpikedTrap>(xStart + j, yStart + i);
-                ceils[i][j].setEntity(spiked_trap_ptr);
+    if (height > 8 && width > 11) {
+        auto spiked_trap_ptr = std::make_shared<SpikedTrap>(xStart + 10, yStart + 7);
+        ceils[7][10].setEntity(spiked_trap_ptr);
+    }
+
+    std::vector<std::pair<int, int>> trapPositions = {
+        {2, 3},
+        {3, 6},
+        {4, 9},
+        {5, 4},
+        {6, 8},
+        {8, 5},
+        {9, 7}
+    };
+
+    for (const auto& pos : trapPositions) {
+        int i = pos.first;
+        int j = pos.second;
+
+        if (i > 0 && i < height - 1 && j > 0 && j < width - 1) {
+
+            if (!((i == 7 && j == 2) || (i == 7 && j == 10))) {
+                ceils[i][j].setEntity(std::make_shared<SpikedTrap>(xStart + j, yStart + i));
             }
         }
     }
@@ -98,10 +120,11 @@ void Field::init() {
 
 
 
-void Field::draw() const { 
-    mvprintw(25, 25, "Enemy: %d", entities.size());
-    int counter = 0;
-    for (const auto i : entities) {
+void Field::draw() const {
+    mvprintw(25, 25, "Turn: %d", turnCounter);
+    //mvprintw(25, 25, "Enemy: %d", entities.size());
+    //int counter = 0;
+    /*for (const auto i : entities) {
         if (i->getType() == Entity::Type::PLAYER) {
             mvprintw(26 + counter, 25, "Type: Player", entities.size());
             mvprintw(25 + counter, 1, "Player X: %d, Y: %d", i->getX() - screen->xMax/2 + FIELD_WIDTH/2, i->getY() - screen->yMax/2 + FIELD_HEIGHT/2);
@@ -112,7 +135,7 @@ void Field::draw() const {
             mvprintw(25 + counter, 1, "X: %d, Y: %d", i->getX() - screen->xMax/2 + FIELD_WIDTH/2, i->getY() - screen->yMax/2 + FIELD_HEIGHT/2);
         }
         counter++;
-    }
+    }*/
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             ceils[i][j].draw();
@@ -135,20 +158,13 @@ void Field::spawnEnemy() {
     ceils[1][1].setEntity(enemy_ptr);
 }
 
-bool Field::update(int ch) { 
+bool Field::update(int ch) {
     std::shared_ptr<Player> player_ptr = nullptr;
     for (const auto& entity : entities) {
         if (entity->getType() == Entity::Type::PLAYER) {
             if (entity->getHealth() > 0) {
                 player_ptr = std::static_pointer_cast<Player>(entity);
-                if (ch != ERR) {
-                    if (!player_ptr->getInTrap()) {
-                        player_ptr->handleInput(ceils, ch, screen, height, width); 
-                    } else {
-                        player_ptr->unSetInTrap();
-                    }
-                }
-                break; 
+                break;
             } else {
                 entities.erase(entities.begin() + 0);
                 return false;
@@ -156,27 +172,46 @@ bool Field::update(int ch) {
         }
     }
 
+    if (!player_ptr) return false;
+
     player_ptr->resetAttackFlag();
-    if (player_ptr) {
-        for (int i = 0; i < entities.size(); i++) {
-            if (entities[i]->getType() == Entity::Type::ENEMY) {
-                if (entities[i]->getHealth() > 0) {
-                    std::shared_ptr<Enemy> enemy_ptr = std::static_pointer_cast<Enemy>(entities[i]);
-                    enemy_ptr->update(ceils, screen, player_ptr, height, width);
-                } else {
-                    entities.erase(entities.begin() + i);
-                }
-            }
+
+    bool playerMadeAction = false;
+    if (ch != ERR && !player_ptr->getInTrap()) {
+        playerMadeAction = player_ptr->handleInput(ceils, ch, screen, height, width);
+    } else {
+        if (ch == ' ') {
+            player_ptr->unSetInTrap();
         }
     }
 
-    /*for (const auto& entity : entities) {
-        if (entity->getType() == Entity::Type::ENEMY_BASE) {
-            std::static_pointer_cast<EnemyBase>(entity)->spawnEnemy(ceils, entities, screen, height, width);
-            break;
+    if (playerMadeAction || !player_ptr->getInTrap()) {
+
+        for (int i = 0; i < entities.size(); ) {
+            if (entities[i]->getType() == Entity::Type::ENEMY) {
+                if (entities[i]->getHealth() > 0) {
+                    std::static_pointer_cast<Enemy>(entities[i])->update(ceils, screen, player_ptr, height, width);
+                    ++i;
+                } else {
+                    entities.erase(entities.begin() + i);
+
+                }
+            } else {
+                ++i;
+            }
         }
-    }*/
+
+        for (const auto& entity : entities) {
+            if (entity->getType() == Entity::Type::ENEMY_BASE) {
+                if (turnCounter % SPAWN_COOLDOWN == 0) {
+                    std::static_pointer_cast<EnemyBase>(entity)->spawnEnemy(ceils, entities, screen, height, width);
+                    break;
+                }
+            }
+        }
+
+        turnCounter++;
+    }
 
     return true;
 }
-

@@ -9,7 +9,7 @@ class Player : public LivingEntity {
 public:
     Player(int x, int y);
     
-    void handleInput(std::vector<std::vector<Ceil>>& ceils, int ch, const ScreenSize* screen, int height, int width);
+    bool handleInput(std::vector<std::vector<Ceil>>& ceils, int ch, const ScreenSize* screen, int height, int width);
     int attack();
     virtual void draw() const override;
     void takeDamage(int amount);

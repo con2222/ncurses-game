@@ -8,6 +8,8 @@ constexpr int UP = 259;
 constexpr int LEFT = 260;
 constexpr int RIGHT = 261;
 constexpr int ENTER = '\n';
+constexpr int SPACE = ' ';
+constexpr int V = 'v';
 
 constexpr char FLOOR = ' ';
 constexpr char WALL = '#';
@@ -16,10 +18,9 @@ constexpr char ENEMY = 'X';
 constexpr char ENEMY_BASE = 'B';
 constexpr char SPIKED_TRAP = '^';
 
-constexpr int PL_HEALTH = 1000;
-constexpr int PL_DAMAGE = 500;
+constexpr int PL_HEALTH = 100;
 constexpr int MELEE_MODE = 0;
-constexpr int MELEE_DAMAGE = 5;
+constexpr int MELEE_DAMAGE = 100;
 constexpr int RANGE_MODE = 1;
 constexpr int RANGE_DAMAGE = 3;
 
@@ -28,6 +29,8 @@ constexpr int EN_HEALTH = 20;
 constexpr int EN_DAMAGE = 5;
 
 constexpr int WALLS_COUNT = 10;
+
+constexpr int SPAWN_COOLDOWN = 5;
 
 
 
