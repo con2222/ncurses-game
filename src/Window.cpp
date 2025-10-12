@@ -1,7 +1,7 @@
 #include <Window.hpp>
 #include <Color.hpp>
 
-void draw_player_bar(WINDOW* pl_bar, WINDOW* en_bar, WINDOW* act_bar, WINDOW* turn_bar, int width) {
+void draw_player_bar(WINDOW* pl_bar, WINDOW* en_bar, WINDOW* act_bar, int width) {
     wborder(pl_bar, '|', '|', '=', '=', '#', '#', '#', '#');
     mvwhline(pl_bar, 2, 1, ACS_HLINE, width / 6 - 2);
     mvwaddch(pl_bar, 2, 0, '+');
@@ -13,8 +13,6 @@ void draw_player_bar(WINDOW* pl_bar, WINDOW* en_bar, WINDOW* act_bar, WINDOW* tu
     mvwaddch(en_bar, 2, width / 6 - 1, '+');
 
     wborder(act_bar, '|', '|', '-', '-', '+', '+', '+', '+');
-
-    box(turn_bar, 0, 0);
 }
 
 WINDOW* create_player_bar(int height, int width) {
@@ -32,13 +30,8 @@ WINDOW* create_action_bar(int height, int width) {
     return act_bar;
 }
 
-WINDOW* create_turn_bar(int height, int width) {
-    WINDOW* turn_bar = newwin(height / 10, width / 4, 0, width/2 - width/8);
-    return turn_bar;
-}
-
 void update_battle_windows(
-    WINDOW* pl_bar, WINDOW* en_bar, WINDOW* act_bar, WINDOW* turn_bar,
+    WINDOW* pl_bar, WINDOW* en_bar, WINDOW* act_bar,
     std::shared_ptr<Player> player, std::shared_ptr<Enemy> enemy,
     const std::vector<std::string>& options, int selected_option,
     BattleTurn turn, int width)
@@ -46,9 +39,8 @@ void update_battle_windows(
     werase(pl_bar);
     werase(en_bar);
     werase(act_bar);
-    werase(turn_bar);
 
-    draw_player_bar(pl_bar, en_bar, act_bar, turn_bar, width);
+    draw_player_bar(pl_bar, en_bar, act_bar, width);
 
 
     mvwprintw(pl_bar, 5, 5, "Health: %d", player->getHealth());
@@ -70,14 +62,7 @@ void update_battle_windows(
         }
     }
 
-    if (turn == BattleTurn::PLAYER) {
-        mvwprintw(turn_bar, 1, 1, "PLAYER TURN");
-    } else {
-        mvwprintw(turn_bar, 1, 1, "ENEMY TURN");
-    }
-
     wrefresh(act_bar);
     wrefresh(pl_bar);
     wrefresh(en_bar);
-    wrefresh(turn_bar);
 }

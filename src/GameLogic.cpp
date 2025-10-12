@@ -6,6 +6,17 @@
 #include <ncurses.h>
 #include <Window.hpp>
 
+void draw(int yMax, int xMax, BattleTurn turn) {
+    clear();
+    printMultiline(0, xMax/2 - 40, readFileToString("../assets/battle/turnBar.txt"));
+    if (turn == BattleTurn::PLAYER) {
+        printMultiline(3, xMax/2 - 40 + 26, readFileToString("../assets/battle/playerTurn.txt"));
+    } else {
+        printMultiline(3, xMax/2 - 40 + 24, readFileToString("../assets/battle/enemyTurn.txt"));
+    }
+    refresh();
+}
+
 bool startBattle(const ScreenSize* const screen, std::vector<std::vector<Ceil>>& ceils, std::shared_ptr<Player> player, std::shared_ptr<Enemy> enemy, BattleTurn turn) {
     clear();
 
@@ -15,13 +26,11 @@ bool startBattle(const ScreenSize* const screen, std::vector<std::vector<Ceil>>&
     WINDOW* pl_bar = create_player_bar(height, width);
     WINDOW* en_bar = create_enemy_bar(height, width);
     WINDOW* act_bar = create_action_bar(height, width);
-    WINDOW* turn_bar = create_turn_bar(height, width);
 
     refresh();
     wrefresh(pl_bar);
     wrefresh(en_bar);
     wrefresh(act_bar);
-    wrefresh(turn_bar);
 
     std::vector<std::string> options {"Attack", "Change weapon"};
     int selected_option = 0;
@@ -31,11 +40,12 @@ bool startBattle(const ScreenSize* const screen, std::vector<std::vector<Ceil>>&
     BattleTurn currentTurn = turn;
     int battleResult = 0;
 
-    update_battle_windows(pl_bar, en_bar, act_bar, turn_bar, player, enemy, options, selected_option, turn, width);
+    update_battle_windows(pl_bar, en_bar, act_bar, player, enemy, options, selected_option, turn, width);
 
     while(!battleIsOver) {
+        draw(screen->yMax, screen->xMax, currentTurn);
+        update_battle_windows(pl_bar, en_bar, act_bar, player, enemy, options, selected_option, turn, width);
         if (currentTurn == BattleTurn::PLAYER) {
-            mvprintw(25, 25, "Player turn");
             int ch = getch();
             switch (ch) {
                 case KEY_UP:
@@ -85,12 +95,11 @@ bool startBattle(const ScreenSize* const screen, std::vector<std::vector<Ceil>>&
                 currentTurn = BattleTurn::PLAYER;
             }
         }
-        update_battle_windows(pl_bar, en_bar, act_bar, turn_bar, player, enemy, options, selected_option, currentTurn, width);
+        update_battle_windows(pl_bar, en_bar, act_bar, player, enemy, options, selected_option, currentTurn, width);
     }
     delwin(pl_bar);
     delwin(en_bar);
     delwin(act_bar);
-    delwin(turn_bar);
 
     return battleResult;
 }
