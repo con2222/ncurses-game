@@ -32,14 +32,15 @@ void Game::start() {
 
     bool choice = 0;
 
-    field.init();
-    field.spawnPlayer();
-    field.spawnEnemy();
-    field.draw();
+
     Menu menu(screen.yMax, screen.xMax);
     choice = menu.init();
-    //menu.deinit();
+
     if (choice) {
+        field.init();
+        field.spawnPlayer();
+        field.spawnEnemy();
+        field.draw();
         int ch;
         bool playerIsAlive = 1;
         while (true) {
@@ -57,6 +58,5 @@ void Game::start() {
             refresh();
         }
     }
-    menu.deinit();
     cleanup();
 }

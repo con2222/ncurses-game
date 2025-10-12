@@ -5,19 +5,17 @@
 
 class Menu {
 public:
-    Menu(int height, int width);
-    ~Menu();
+    Menu(int yMax, int xMax);
 
     bool init();
 
-    void deinit();
 private:
     void draw();
-    int height;
-    int width;
-    WINDOW* menu;
+    int yMax;
+    int xMax;
 
-    std::vector<std::string> options = {"Start Game", "Exit"};
+    std::vector<std::string> options;
+    std::vector<std::string> elements;
     int selected = 0;
 };
 

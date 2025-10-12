@@ -1,32 +1,47 @@
 #include "Menu.hpp"
-#include <unistd.h> 
+#include <unistd.h>
+#include <Utils.hpp>
 
-Menu::Menu(int height, int width)
-    : height(height), width(width) {
-    int win_h = 10;
-    int win_w = 30;
-    int start_y = height / 2 - win_h / 2;
-    int start_x = width / 2 - win_w / 2;
+Menu::Menu(int yMax, int xMax) : yMax(yMax), xMax(xMax) {
 
-    menu = newwin(win_h, win_w, start_y, start_x);
-    keypad(menu, TRUE);
+    std::string img = readFileToString("../assets/menu/start.txt");
+    options.push_back(img);
+
+    img = readFileToString("../assets/menu/exit.txt");
+    options.push_back(img);
+
+    img = readFileToString("../assets/menu/2.txt");
+    elements.push_back(img);
+
+    img = readFileToString("../assets/menu/1.txt");
+    elements.push_back(img);
+
+    img = readFileToString("../assets/menu/3.txt");
+    elements.push_back(img);
+
+    img = readFileToString("../assets/menu/4.txt");
+    elements.push_back(img);
 }
 
 void Menu::draw() {
-    werase(menu);
-    box(menu, 0, 0);
-    mvwprintw(menu, 1, 30/2 - 8, "=== MAIN MENU ===");
+    clear();
+    
+    print_multiline(0, 0, elements[0]);
+    print_multiline(0, xMax - 40, elements[1]);
+    print_multiline(yMax - 18, xMax - 40, elements[2]);
+    print_multiline(yMax - 18, 0, elements[3]);
+    int step = 8;
 
     for (size_t i = 0; i < options.size(); ++i) {
         if (static_cast<int>(i) == selected) {
-            wattron(menu, A_REVERSE);
-            mvwprintw(menu, 3 + static_cast<int>(i), 30/2 - options[i].size()/2, "%s", options[i].c_str());
-            wattroff(menu, A_REVERSE);
+            attron(A_REVERSE);
+            print_multiline(yMax/4 + step * i, xMax/2 - 12, options[i]);
+            attroff(A_REVERSE);
         } else {
-            mvwprintw(menu, 3 + static_cast<int>(i), 30/2 - options[i].size()/2, "%s", options[i].c_str());
+            print_multiline(yMax/4 + step * i, xMax/2 - 9, options[i]);
         }
     }
-    wrefresh(menu);
+    refresh();
 }
 
 bool Menu::init() {
@@ -35,7 +50,7 @@ bool Menu::init() {
 
     while (true) {
         draw();
-        ch = wgetch(menu);
+        ch = getch();
 
         switch (ch) {
             case KEY_UP:
@@ -45,9 +60,11 @@ bool Menu::init() {
                 if (selected < static_cast<int>(options.size()) - 1) selected++;
                 break;
             case '\n': 
-                if (options[selected] == "Exit") {
+                if (selected == 1) {
                     return 0;
-                } else if (options[selected] == "Start Game") {
+                } else if (selected == 0) {
+                    clear();
+                    refresh();
                     return 1;
                 }
 
@@ -60,17 +77,4 @@ bool Menu::init() {
 
         usleep(10000); 
     }
-}
-
-void Menu::deinit() {
-    if (menu) {
-        werase(menu);      
-        wrefresh(menu);    
-        delwin(menu);      
-        menu = nullptr;
-    }
-}
-
-Menu::~Menu() {
-    deinit();
 }
