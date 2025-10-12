@@ -1,11 +1,13 @@
 #include <Player.hpp>
 #include <Constants.hpp>
+#include <string>
 #include <Entity.hpp>
 #include <Color.hpp>
 #include <memory>
 #include <Floor.hpp>
 #include <GameLogic.hpp>
 #include <Enemy.hpp>
+#include <Utils.hpp>
 
 Player::Player(int x, int y) : LivingEntity(x, y, Entity::Type::PLAYER, PL_HEALTH), damage(MELEE_DAMAGE), weaponMode(MELEE_MODE) {}
 
@@ -84,8 +86,19 @@ bool Player::handleInput(std::vector<std::vector<Ceil>>& ceils, int ch, const Sc
 
 void Player::draw() const {
     mvaddch(y, x, sprite);
+    int xMax, yMax;
+    getmaxyx(stdscr, yMax, xMax);
 
-    mvprintw(4, 4, "%d", health);
+    printMultiline(0, 0, readFileToString("../assets/knight/icon.txt"));
+    printMultiline(0, 32, readFileToString("../assets/bar/hp.txt"));
+    printNumbers(0, 47, health);
+    printMultiline(5, 32, readFileToString("../assets/bar/dmg.txt"));
+    printNumbers(5, 54, damage);
+    if (weaponMode == MELEE_MODE) {
+        printMultiline(0, xMax - 30, readFileToString("../assets/knight/sword.txt"));
+    } else {
+        printMultiline(0, xMax - 30, readFileToString("../assets/knight/bow.txt"));
+    }
 }
 
 void Player::takeDamage(int amount) {

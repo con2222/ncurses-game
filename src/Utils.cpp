@@ -15,7 +15,7 @@ void printMultiline(WINDOW *win, int start_y, int start_x, const std::string& te
     }
 }
 
-void print_multiline(int start_y, int start_x, const std::string& text) {
+void printMultiline(int start_y, int start_x, const std::string& text) {
     std::stringstream ss(text);
     std::string line;
     int current_y = start_y;
@@ -35,4 +35,17 @@ std::string readFileToString(const std::string& filename) {
     std::stringstream buffer; 
     buffer << fileStream.rdbuf();
     return buffer.str();
+}
+
+void printNumbers(int y, int x, int number) {
+    std::string sNumber = std::to_string(number);
+    int i = x;
+    for (auto ch : sNumber) {
+        printMultiline(y, i, readFileToString("../assets/numbers/" + std::string(1, ch) + ".txt"));
+        if (ch == '1') {
+            i = i + 3;
+        } else {
+            i = i + 7;
+        }
+    }
 }

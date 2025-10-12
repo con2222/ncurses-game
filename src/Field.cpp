@@ -8,8 +8,7 @@
 #include <Enemy.hpp>
 #include <EnemyBase.hpp>
 #include <SpikedTrap.hpp>
-#include <algorithm>
-
+#include <Utils.hpp>
 
 Field::Field() : screen(nullptr), width(FIELD_WIDTH), height(FIELD_HEIGHT) {
     ceils.resize(height);
@@ -121,7 +120,7 @@ void Field::init() {
 
 
 void Field::draw() const {
-    mvprintw(25, 25, "Turn: %d", turnCounter);
+    //mvprintw(25, 25, "Turn: %d", turnCounter);
     //mvprintw(25, 25, "Enemy: %d", entities.size());
     //int counter = 0;
     /*for (const auto i : entities) {
@@ -141,6 +140,8 @@ void Field::draw() const {
             ceils[i][j].draw();
         }
     }
+    printMultiline(screen->yMax - 5, 0, readFileToString("../assets/bar/turn.txt"));
+    printNumbers(screen->yMax - 5, 27, turnCounter);
 }
 
 void Field::setScreen(const ScreenSize* screen) {
@@ -185,7 +186,7 @@ bool Field::update(int ch) {
         }
     }
 
-    if (playerMadeAction || !player_ptr->getInTrap()) {
+    if (playerMadeAction && !player_ptr->getInTrap()) {
 
         for (int i = 0; i < entities.size(); ) {
             if (entities[i]->getType() == Entity::Type::ENEMY) {
@@ -204,7 +205,7 @@ bool Field::update(int ch) {
         for (const auto& entity : entities) {
             if (entity->getType() == Entity::Type::ENEMY_BASE) {
                 if (turnCounter % SPAWN_COOLDOWN == 0) {
-                    std::static_pointer_cast<EnemyBase>(entity)->spawnEnemy(ceils, entities, screen, height, width);
+                    //std::static_pointer_cast<EnemyBase>(entity)->spawnEnemy(ceils, entities, screen, height, width);
                     break;
                 }
             }
