@@ -8,11 +8,13 @@
 
 void draw(int yMax, int xMax, BattleTurn turn) {
     clear();
-    printMultiline(0, xMax/2 - 40, readFileToString("../assets/battle/turnBar.txt"));
+    printMultiline(yMax/2 - 15, xMax/2 - 50, readFileToString("../assets/knight/inBattle.txt"));
+    printMultiline(yMax/2 - 15, xMax/2 + 20, readFileToString("../assets/knight/pythonist.txt"));
+    //printMultiline(0, xMax/2 - 40, readFileToString("../assets/battle/turnBar.txt"));
     if (turn == BattleTurn::PLAYER) {
-        printMultiline(3, xMax/2 - 40 + 26, readFileToString("../assets/battle/playerTurn.txt"));
+        printMultiline(0, xMax/2 - 40 + 26, readFileToString("../assets/battle/playerTurn.txt"));
     } else {
-        printMultiline(3, xMax/2 - 40 + 24, readFileToString("../assets/battle/enemyTurn.txt"));
+        printMultiline(0, xMax/2 - 40 + 24, readFileToString("../assets/battle/enemyTurn.txt"));
     }
     refresh();
 }
@@ -26,6 +28,8 @@ bool startBattle(const ScreenSize* const screen, std::vector<std::vector<Ceil>>&
     WINDOW* pl_bar = create_player_bar(height, width);
     WINDOW* en_bar = create_enemy_bar(height, width);
     WINDOW* act_bar = create_action_bar(height, width);
+
+    //printMultiline(height/2, width/2, readFileToString("../assets/knight/inBattle.txt"));
 
     refresh();
     wrefresh(pl_bar);
