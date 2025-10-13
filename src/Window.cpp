@@ -15,21 +15,6 @@ void draw_player_bar(WINDOW* pl_bar, WINDOW* en_bar, WINDOW* act_bar, int width)
     wborder(act_bar, '|', '|', '-', '-', '+', '+', '+', '+');
 }
 
-WINDOW* create_player_bar(int height, int width) {
-    WINDOW* pl_bar = newwin(height / 5, width / 6, 0, 0);
-    return pl_bar;
-}
-
-WINDOW* create_enemy_bar(int height, int width) {
-    WINDOW* en_bar = newwin(height / 5, width / 6, 0, width - width / 6);
-    return en_bar;
-}
-
-WINDOW* create_action_bar(int height, int width) {
-    WINDOW* act_bar = newwin(height / 5, width / 6, height - height / 5, 0);
-    return act_bar;
-}
-
 void update_battle_windows(
     WINDOW* pl_bar, WINDOW* en_bar, WINDOW* act_bar,
     std::shared_ptr<Player> player, std::shared_ptr<Enemy> enemy,
@@ -43,14 +28,14 @@ void update_battle_windows(
     draw_player_bar(pl_bar, en_bar, act_bar, width);
 
 
-    mvwprintw(pl_bar, 5, 5, "Health: %d", player->getHealth());
+    mvwprintw(pl_bar, 3, 5, "Health: %d", player->getHealth());
     if (player->getMode() == MELEE_MODE) {
-        mvwprintw(pl_bar, 6, 5, "MODE: MELEE");
+        mvwprintw(pl_bar, 4, 5, "MODE: MELEE");
     } else {
-        mvwprintw(pl_bar, 6, 5, "MODE: RANGE");
+        mvwprintw(pl_bar, 4, 5, "MODE: RANGE");
     }
 
-    mvwprintw(en_bar, 5, 5, "Health: %d", enemy->getHealth());
+    mvwprintw(en_bar, 3, 5, "Health: %d", enemy->getHealth());
 
     for (int i = 0; i < 2; i++) {
         if (selected_option == i) {

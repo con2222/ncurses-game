@@ -8,10 +8,6 @@
 class Player;
 class Enemy;
 
-WINDOW* create_player_bar(int height, int width);
-WINDOW* create_enemy_bar(int height, int width);
-WINDOW* create_action_bar(int height, int width);
-
 void draw_player_bar(WINDOW* pl_bar, WINDOW* en_bar, WINDOW* act_bar, int width);
 void update_battle_windows(
     WINDOW* pl_bar, WINDOW* en_bar, WINDOW* act_bar,
