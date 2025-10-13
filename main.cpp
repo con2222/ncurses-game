@@ -6,6 +6,8 @@
 int main() {
     setlocale(LC_ALL, "");
     Game game;
-    game.start();
+    if (game.help()) {
+        game.start();
+    }
     return 0;
 }

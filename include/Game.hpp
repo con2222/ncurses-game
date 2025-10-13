@@ -7,6 +7,7 @@ class Game {
     Field field;
 public:
     Game();
+    bool help();
     void start();
     void initScreen();
     void cleanup();
