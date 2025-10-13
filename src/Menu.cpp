@@ -78,6 +78,7 @@ bool Menu::init() {
 }
 
 void Menu::gameOver() {
+    flushinp();
     printMultiline(yMax/2 - 3, xMax/2 - 35, readFileToString(GAMEOVER));
     printMultiline(yMax/2 - 12, 0, readFileToString(DEFEATED_KNIGHT));
     mvprintw(yMax/2 + 4, xMax/2 - 6, "press any key");
