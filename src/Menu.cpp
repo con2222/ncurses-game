@@ -36,9 +36,7 @@ void Menu::draw() {
 
     for (size_t i = 0; i < options.size(); ++i) {
         if (static_cast<int>(i) == selected) {
-            //attron(A_REVERSE);
             printMultiline(yMax/3 + step * i, xMax/2 - 12, options[i]);
-            //attroff(A_REVERSE);
         } else {
             printMultiline(yMax/3 + step * i, xMax/2 - 24, options[i]);
         }

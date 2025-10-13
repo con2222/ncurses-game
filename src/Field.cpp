@@ -120,21 +120,6 @@ void Field::init() {
 
 
 void Field::draw() const {
-    //mvprintw(25, 25, "Turn: %d", turnCounter);
-    //mvprintw(25, 25, "Enemy: %d", entities.size());
-    //int counter = 0;
-    /*for (const auto i : entities) {
-        if (i->getType() == Entity::Type::PLAYER) {
-            mvprintw(26 + counter, 25, "Type: Player", entities.size());
-            mvprintw(25 + counter, 1, "Player X: %d, Y: %d", i->getX() - screen->xMax/2 + FIELD_WIDTH/2, i->getY() - screen->yMax/2 + FIELD_HEIGHT/2);
-            auto player_ptr = std::static_pointer_cast<Player>(i);
-            mvprintw(15, 15, "Trapped: %d", player_ptr->getInTrap());
-            mvprintw(16, 16, "Weapon mode: %d", player_ptr->getMode()); 
-        } else {
-            mvprintw(25 + counter, 1, "X: %d, Y: %d", i->getX() - screen->xMax/2 + FIELD_WIDTH/2, i->getY() - screen->yMax/2 + FIELD_HEIGHT/2);
-        }
-        counter++;
-    }*/
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             ceils[i][j].draw();
@@ -205,7 +190,6 @@ bool Field::update(int ch) {
         for (const auto& entity : entities) {
             if (entity->getType() == Entity::Type::ENEMY_BASE) {
                 if (turnCounter % SPAWN_COOLDOWN == 0) {
-                    //std::static_pointer_cast<EnemyBase>(entity)->spawnEnemy(ceils, entities, screen, height, width);
                     break;
                 }
             }

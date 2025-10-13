@@ -47,8 +47,10 @@ bool Player::handleInput(std::vector<std::vector<Ceil>>& ceils, int ch, const Sc
         case RIGHT:
             if (nextX < screen->xMax/2 + width/2 - 2) {nextX++; moved = true;}
             break;
-        case V:
+        case TAB:
             switchMode();
+            napms(200);
+            flushinp();
             return true;
         default:
             return false;

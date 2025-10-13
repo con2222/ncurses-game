@@ -37,13 +37,13 @@ void update_battle_windows(
 
     mvwprintw(en_bar, 3, 5, "Health: %d", enemy->getHealth());
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < options.size(); i++) {
         if (selected_option == i) {
             wattron(act_bar, COLOR_PAIR(static_cast<int>(ColorPair::BATTLE_BUTTON)));
-            mvwprintw(act_bar, 5 + i, width / 6 / 4, "%s", options[i].c_str());
+            mvwprintw(act_bar, 1 + i, width / 6 / 4, "%s", options[i].c_str());
             wattroff(act_bar, COLOR_PAIR(static_cast<int>(ColorPair::BATTLE_BUTTON)));
         } else {
-            mvwprintw(act_bar, 5 + i, width / 6 / 4, "%s", options[i].c_str());
+            mvwprintw(act_bar, 1 + i, width / 6 / 4, "%s", options[i].c_str());
         }
     }
 
