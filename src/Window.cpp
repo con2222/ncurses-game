@@ -27,15 +27,18 @@ void update_battle_windows(
 
     draw_player_bar(pl_bar, en_bar, act_bar, width);
 
+    int playerHP = player->getHealth() > 0 ? player->getHealth() : 0;
+    int enemyHP = enemy->getHealth() > 0 ? enemy->getHealth() : 0;
 
-    mvwprintw(pl_bar, 3, 5, "Health: %d", player->getHealth());
+    mvwprintw(pl_bar, 1, width/12 - 3, "KNIGHT");
+    mvwprintw(pl_bar, 3, 5, "Health: %d", playerHP);
     if (player->getMode() == MELEE_MODE) {
         mvwprintw(pl_bar, 4, 5, "MODE: MELEE");
     } else {
         mvwprintw(pl_bar, 4, 5, "MODE: RANGE");
     }
-
-    mvwprintw(en_bar, 3, 5, "Health: %d", enemy->getHealth());
+    mvwprintw(en_bar, 1, width/12 - 2, "ENEMY");
+    mvwprintw(en_bar, 3, 5, "Health: %d", enemyHP);
 
     for (int i = 0; i < options.size(); i++) {
         if (selected_option == i) {

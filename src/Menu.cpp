@@ -1,25 +1,25 @@
-#include "Menu.hpp"
-#include <unistd.h>
+#include <Menu.hpp>
 #include <Utils.hpp>
+#include <Constants.hpp>
 
 Menu::Menu(int yMax, int xMax) : yMax(yMax), xMax(xMax) {
 
-    std::string img = readFileToString("../assets/menu/start.txt");
+    std::string img = readFileToString(START_BUTTON);
     options.push_back(img);
 
-    img = readFileToString("../assets/menu/exit.txt");
+    img = readFileToString(EXIT_BUTTON);
     options.push_back(img);
 
-    img = readFileToString("../assets/menu/2.txt");
+    img = readFileToString(LEFT_UP_CORNER);
     elements.push_back(img);
 
-    img = readFileToString("../assets/menu/1.txt");
+    img = readFileToString(RIGHT_UP_CORNER);
     elements.push_back(img);
 
-    img = readFileToString("../assets/menu/3.txt");
+    img = readFileToString(LEFT_DOWN_CORNER);
     elements.push_back(img);
 
-    img = readFileToString("../assets/menu/4.txt");
+    img = readFileToString(RIGHT_DOWN_CORNER);
     elements.push_back(img);
 }
 
@@ -31,7 +31,7 @@ void Menu::draw() {
     printMultiline(yMax - 18, xMax - 40, elements[2]);
     printMultiline(yMax - 18, 0, elements[3]);
 
-    printMultiline(yMax/2 - 12, xMax/6, readFileToString("../assets/knight/main.txt"));
+    printMultiline(yMax/2 - 12, xMax/6, readFileToString(KNIGHT_ICON));
     int step = 8;
 
     for (size_t i = 0; i < options.size(); ++i) {
@@ -74,7 +74,12 @@ bool Menu::init() {
                 running = false;
                 break;
         }
-
-        usleep(10000); 
     }
+}
+
+void Menu::gameOver() {
+    printMultiline(yMax/2 - 3, xMax/2 - 35, readFileToString(GAMEOVER));
+    printMultiline(yMax/2 - 12, 0, readFileToString(DEFEATED_KNIGHT));
+    mvprintw(yMax/2 + 4, xMax/2 - 6, "press any key");
+    getch();
 }

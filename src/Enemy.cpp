@@ -1,7 +1,7 @@
 #include <Enemy.hpp>
 #include <Floor.hpp>
 #include <Color.hpp>
-#include <GameLogic.hpp>
+#include <BattleLogic.hpp>
 #include <Constants.hpp>
 #include <cmath>
 

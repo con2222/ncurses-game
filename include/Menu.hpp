@@ -8,6 +8,7 @@ public:
     Menu(int yMax, int xMax);
 
     bool init();
+    void gameOver();
 
 private:
     void draw();
@@ -18,4 +19,3 @@ private:
     std::vector<std::string> elements;
     int selected = 0;
 };
-

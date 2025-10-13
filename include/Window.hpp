@@ -3,7 +3,7 @@
 #include <memory>
 #include <vector>
 #include <string>
-#include <GameLogic.hpp>
+#include <BattleLogic.hpp>
 
 class Player;
 class Enemy;

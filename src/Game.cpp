@@ -39,7 +39,6 @@ void Game::start() {
     if (choice) {
         field.init();
         field.spawnPlayer();
-        field.spawnEnemy();
         field.draw();
         int ch;
         bool playerIsAlive = 1;
@@ -49,6 +48,9 @@ void Game::start() {
             playerIsAlive = field.update(ch);
 
             if (playerIsAlive == 0) {
+                clear();
+                refresh();
+                menu.gameOver();
                 break;
             }
             clear();

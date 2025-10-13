@@ -17,7 +17,7 @@ add_executable(main
     src/Entity.cpp
     src/Player.cpp
     src/Enemy.cpp
-    src/GameLogic.cpp
+    src/BattleLogic.cpp
     src/Utils.cpp
     src/LivingEntity.cpp
     src/EnemyBase.cpp

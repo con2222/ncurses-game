@@ -1,6 +1,6 @@
-#include "Field.hpp"
+#include <Field.hpp>
 #include <ncurses.h>
-#include "Color.hpp"
+#include <Color.hpp>
 #include <Constants.hpp>
 #include <Wall.hpp>
 #include <Floor.hpp>
@@ -125,23 +125,12 @@ void Field::draw() const {
             ceils[i][j].draw();
         }
     }
-    printMultiline(screen->yMax - 5, 0, readFileToString("../assets/bar/turn.txt"));
+    printMultiline(screen->yMax - 5, 0, readFileToString(TURN_BAR));
     printNumbers(screen->yMax - 5, 27, turnCounter);
 }
 
 void Field::setScreen(const ScreenSize* screen) {
     this->screen = screen;
-}
-
-void Field::spawnEnemy() {
-    int xStart = screen->xMax/2 - width/2;
-    int yStart = screen->yMax/2 - height/2;
-
-    auto enemy_ptr = std::make_shared<Enemy>(xStart + 1, yStart + 1);
-
-    this->entities.push_back(enemy_ptr);
-
-    ceils[1][1].setEntity(enemy_ptr);
 }
 
 bool Field::update(int ch) {
@@ -158,8 +147,6 @@ bool Field::update(int ch) {
         }
     }
 
-    if (!player_ptr) return false;
-
     player_ptr->resetAttackFlag();
 
     bool playerMadeAction = false;
@@ -167,12 +154,12 @@ bool Field::update(int ch) {
         playerMadeAction = player_ptr->handleInput(ceils, ch, screen, height, width);
     } else {
         if (ch == ' ') {
+            playerMadeAction = true;
             player_ptr->unSetInTrap();
         }
     }
 
-    if (playerMadeAction && !player_ptr->getInTrap()) {
-
+    if (playerMadeAction && player_ptr->getHealth() > 0) {
         for (int i = 0; i < entities.size(); ) {
             if (entities[i]->getType() == Entity::Type::ENEMY) {
                 if (entities[i]->getHealth() > 0) {
@@ -190,6 +177,7 @@ bool Field::update(int ch) {
         for (const auto& entity : entities) {
             if (entity->getType() == Entity::Type::ENEMY_BASE) {
                 if (turnCounter % SPAWN_COOLDOWN == 0) {
+                    std::static_pointer_cast<EnemyBase>(entity)->spawnEnemy(ceils, entities, screen, height, width);
                     break;
                 }
             }
@@ -197,6 +185,8 @@ bool Field::update(int ch) {
 
         turnCounter++;
     }
+
+    if (player_ptr->getHealth() <= 0) {return false;}
 
     return true;
 }

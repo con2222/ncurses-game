@@ -27,4 +27,4 @@ private:
     bool wasAttacked = false;
     bool inTrap = false;
     char sprite = PLAYER;
-}; 
+};

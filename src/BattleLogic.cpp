@@ -1,4 +1,4 @@
-#include <GameLogic.hpp>
+#include <BattleLogic.hpp>
 #include <Utils.hpp>
 #include <Constants.hpp>
 #include <Color.hpp>
@@ -89,14 +89,21 @@ void drawBattleScreen(const ScreenSize* screen, BattleTurn turn, std::shared_ptr
     int centerY = screen->yMax / 2;
     int centerX = screen->xMax / 2;
 
-    if (player->getMode() == MELEE_MODE) {
-        printMultiline(centerY + BATTLE_Y_OFFSET, centerX + PLAYER_X_OFFSET, readFileToString(KNIGHT_MELEE_BATTLE));
+    if (player->getHealth() > 0) {
+        if (player->getMode() == MELEE_MODE) {
+            printMultiline(centerY + BATTLE_Y_OFFSET, centerX + PLAYER_X_OFFSET, readFileToString(KNIGHT_MELEE_BATTLE));
+        } else {
+            printMultiline(centerY + BATTLE_Y_OFFSET, centerX + PLAYER_X_OFFSET, readFileToString(KNIGHT_RANGED_BATTLE));
+        }
     } else {
-        printMultiline(centerY + BATTLE_Y_OFFSET, centerX + PLAYER_X_OFFSET, readFileToString(KNIGHT_RANGED_BATTLE));
+        printMultiline(centerY + BATTLE_Y_OFFSET, centerX + PLAYER_X_OFFSET, readFileToString(GRAVE));
     }
 
-    printMultiline(centerY + BATTLE_Y_OFFSET, centerX + ENEMY_X_OFFSET, readFileToString(GOBLIN_BATTLE));
-
+    if (enemy->getHealth() > 0) {
+        printMultiline(centerY + BATTLE_Y_OFFSET, centerX + ENEMY_X_OFFSET, readFileToString(GOBLIN_BATTLE));
+    } else {
+        printMultiline(centerY + BATTLE_Y_OFFSET, centerX + ENEMY_X_OFFSET, readFileToString(GRAVE));
+    }
     if (turn == BattleTurn::PLAYER) {
         printMultiline(0, centerX - 40 + PLAYER_TURN_X_OFFSET, readFileToString(PLAYER_TURN_TXT));
     } else {
@@ -109,7 +116,7 @@ void drawBattleScreen(const ScreenSize* screen, BattleTurn turn, std::shared_ptr
 
 BattleTurn handlePlayerTurn(const ScreenSize* screen, std::shared_ptr<Player> player, std::shared_ptr<Enemy> enemy, std::vector<std::vector<Ceil>>& ceils, bool& battleIsOver, int& battleResult, int& selected_option, const std::vector<std::string>& options) {
     flushinp();
-    int ch = getch(); 
+    int ch = getch();
     switch (ch) {
         case KEY_UP:
             if (selected_option > 0) selected_option--;
@@ -181,17 +188,17 @@ bool startBattle(const ScreenSize* const screen, std::vector<std::vector<Ceil>>&
     bool battleIsOver = false;
     int battleResult = 0;
     BattleTurn currentTurn = turn;
-
+    drawBattleScreen(screen, currentTurn, player, enemy, options, selected_option, pl_bar, en_bar, act_bar);
     while (!battleIsOver) {
-
-        drawBattleScreen(screen, currentTurn, player, enemy, options, selected_option, pl_bar, en_bar, act_bar);
-
         if (currentTurn == BattleTurn::PLAYER) {
             currentTurn = handlePlayerTurn(screen, player, enemy, ceils, battleIsOver, battleResult, selected_option, options);
         } else {
             currentTurn = handleEnemyTurn(screen, player, enemy, ceils, battleIsOver, battleResult);
         }
+        drawBattleScreen(screen, currentTurn, player, enemy, options, selected_option, pl_bar, en_bar, act_bar);
     }
+
+    napms(1500);
 
     delwin(pl_bar);
     delwin(en_bar);

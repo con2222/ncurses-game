@@ -5,7 +5,7 @@
 #include <Color.hpp>
 #include <memory>
 #include <Floor.hpp>
-#include <GameLogic.hpp>
+#include <BattleLogic.hpp>
 #include <Enemy.hpp>
 #include <Utils.hpp>
 
@@ -90,16 +90,16 @@ void Player::draw() const {
     mvaddch(y, x, sprite);
     int xMax, yMax;
     getmaxyx(stdscr, yMax, xMax);
-
-    printMultiline(0, 0, readFileToString("../assets/knight/icon.txt"));
-    printMultiline(0, 32, readFileToString("../assets/bar/hp.txt"));
+    
+    printMultiline(0, 0, readFileToString(KNIGHT));
+    printMultiline(0, 32, readFileToString(HP));
     printNumbers(0, 47, health);
-    printMultiline(5, 32, readFileToString("../assets/bar/dmg.txt"));
+    printMultiline(5, 32, readFileToString(DMG));
     printNumbers(5, 54, damage);
     if (weaponMode == MELEE_MODE) {
-        printMultiline(0, xMax - 30, readFileToString("../assets/knight/sword.txt"));
+        printMultiline(0, xMax - 30, readFileToString(SWORD));
     } else {
-        printMultiline(0, xMax - 30, readFileToString("../assets/knight/bow.txt"));
+        printMultiline(0, xMax - 30, readFileToString(BOW));
     }
 }
 
