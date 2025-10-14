@@ -3,7 +3,7 @@
 #include <sstream>
 #include <stdexcept>
 
-void printMultiline(WINDOW *win, int start_y, int start_x, const std::string& text) {
+void Utils::printMultiline(WINDOW *win, int start_y, int start_x, const std::string& text) {
     std::stringstream ss(text);
     std::string line;
     int current_y = start_y;
@@ -15,7 +15,7 @@ void printMultiline(WINDOW *win, int start_y, int start_x, const std::string& te
     }
 }
 
-void printMultiline(int start_y, int start_x, const std::string& text) {
+void Utils::printMultiline(int start_y, int start_x, const std::string& text) {
     std::stringstream ss(text);
     std::string line;
     int current_y = start_y;
@@ -27,7 +27,7 @@ void printMultiline(int start_y, int start_x, const std::string& text) {
     }
 }
 
-std::string readFileToString(const std::string& filename) {
+std::string Utils::readFileToString(const std::string& filename) {
     std::ifstream fileStream(filename);
     if (!fileStream.is_open()) {
         throw std::runtime_error("Could not open file: " + filename);
@@ -37,7 +37,7 @@ std::string readFileToString(const std::string& filename) {
     return buffer.str();
 }
 
-void printNumbers(int y, int x, int number) {
+void Utils::printNumbers(int y, int x, int number) {
     std::string sNumber = std::to_string(number);
     int i = x;
     for (auto ch : sNumber) {

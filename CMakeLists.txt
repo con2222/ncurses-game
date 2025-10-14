@@ -16,13 +16,14 @@ add_executable(main
     src/Entity.cpp
     src/Player.cpp
     src/Enemy.cpp
-    src/BattleLogic.cpp
     src/Utils.cpp
     src/LivingEntity.cpp
     src/EnemyBase.cpp
     src/SpikedTrap.cpp
-    src/Window.cpp
     src/Menu.cpp
+    src/BattleController.cpp
+    src/BattleUI.cpp
+    src/Animator.cpp
 )
 
 target_link_libraries(main ${CURSES_LIBRARIES})

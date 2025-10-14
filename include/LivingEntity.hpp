@@ -6,6 +6,7 @@ class LivingEntity : public Entity, public std::enable_shared_from_this<LivingEn
 public:
     LivingEntity(int x, int y, Entity::Type type, int health);
     int getHealth() const override;
+    
 protected:
     int health;
 };

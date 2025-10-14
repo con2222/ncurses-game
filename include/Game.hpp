@@ -5,6 +5,7 @@
 class Game {
     ScreenSize screen;
     Field field;
+    
 public:
     Game();
     bool help();

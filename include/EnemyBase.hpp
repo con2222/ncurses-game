@@ -8,6 +8,7 @@ public:
 
     void spawnEnemy(std::vector<std::vector<Ceil>>& ceils, std::vector<std::shared_ptr<LivingEntity>>& entities, const ScreenSize* screen, int height, int width);
     virtual void draw() const override;
+    
 private:
     char sprite = ENEMY_BASE;
 };

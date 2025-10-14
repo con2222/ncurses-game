@@ -4,6 +4,7 @@
 
 class Wall : public Entity {
     char sprite = WALL;
+    
 public:
     Wall(int x, int y);
     virtual void draw() const override;

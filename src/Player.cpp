@@ -4,9 +4,9 @@
 #include <Entity.hpp>
 #include <memory>
 #include <Floor.hpp>
-#include <BattleLogic.hpp>
 #include <Enemy.hpp>
 #include <Utils.hpp>
+#include <BattleController.hpp>
 
 Player::Player(int x, int y) : LivingEntity(x, y, Entity::Type::PLAYER, PL_HEALTH), damage(MELEE_DAMAGE), weaponMode(MELEE_MODE) {}
 
@@ -70,8 +70,8 @@ bool Player::handleInput(std::vector<std::vector<Ceil>>& ceils, int ch, const Sc
         return true;
     } else if (targetType == Entity::Type::ENEMY) {
         wasAttacked = true;
-        startBattle(screen, ceils, std::static_pointer_cast<Player>(shared_from_this()),
-                    std::static_pointer_cast<Enemy>(targetCell.getEntity()), BattleTurn::PLAYER);
+        BattleController battle(screen, ceils, std::static_pointer_cast<Player>(shared_from_this()), std::static_pointer_cast<Enemy>(targetCell.getEntity()), BattleController::BattleTurn::PLAYER);
+        int result = battle.start();
         return true;
     } else if (targetType == Entity::Type::SPIKED_TRAP) {
         setInTrap();
@@ -90,15 +90,15 @@ void Player::draw() const {
     int xMax, yMax;
     getmaxyx(stdscr, yMax, xMax);
     
-    printMultiline(0, 0, readFileToString(KNIGHT));
-    printMultiline(0, 32, readFileToString(HP));
-    printNumbers(0, 47, health);
-    printMultiline(5, 32, readFileToString(DMG));
-    printNumbers(5, 54, damage);
+    Utils::printMultiline(0, 0, Utils::readFileToString(KNIGHT));
+    Utils::printMultiline(0, 32, Utils::readFileToString(HP));
+    Utils::printNumbers(0, 47, health);
+    Utils::printMultiline(5, 32, Utils::readFileToString(DMG));
+    Utils::printNumbers(5, 54, damage);
     if (weaponMode == MELEE_MODE) {
-        printMultiline(0, xMax - 30, readFileToString(SWORD));
+        Utils::printMultiline(0, xMax - 30, Utils::readFileToString(SWORD));
     } else {
-        printMultiline(0, xMax - 30, readFileToString(BOW));
+        Utils::printMultiline(0, xMax - 30, Utils::readFileToString(BOW));
     }
 }
 

@@ -21,6 +21,7 @@ public:
     void unSetInTrap();
     void switchMode();
     bool getMode();
+    
 private:
     int damage;
     bool weaponMode;

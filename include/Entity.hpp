@@ -23,6 +23,7 @@ public:
     virtual int getHealth() const;
     Entity::Type getType() const;
     virtual ~Entity() = default;
+    
 protected:
     int x;
     int y;

@@ -1,8 +1,8 @@
 #include <Enemy.hpp>
 #include <Floor.hpp>
-#include <BattleLogic.hpp>
 #include <Constants.hpp>
 #include <cmath>
+#include <BattleController.hpp>
 
 Enemy::Enemy(int x, int y) : LivingEntity(x, y, Entity::Type::ENEMY, EN_HEALTH), damage(EN_DAMAGE), sprite(ENEMY) {}
 
@@ -45,7 +45,8 @@ void Enemy::update(std::vector<std::vector<Ceil>>& ceils, const ScreenSize* scre
     if (abs(x - playerX) <= 1 && abs(y - playerY) <= 1 && !(dx == 0 && dy == 0)) {
         if (!player->getWasAttacked()) {
             player->setWasAttacked(true);
-            startBattle(screen, ceils, player, std::static_pointer_cast<Enemy>(shared_from_this()), BattleTurn::ENEMY);
+            BattleController battle(screen, ceils, player, std::static_pointer_cast<Enemy>(shared_from_this()), BattleController::BattleTurn::ENEMY);
+            int result = battle.start();
         }
         return;
     }

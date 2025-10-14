@@ -124,8 +124,8 @@ void Field::draw() const {
             ceils[i][j].draw();
         }
     }
-    printMultiline(screen->yMax - 5, 0, readFileToString(TURN_BAR));
-    printNumbers(screen->yMax - 5, 27, turnCounter);
+    Utils::printMultiline(screen->yMax - 5, 0, Utils::readFileToString(TURN_BAR));
+    Utils::printNumbers(screen->yMax - 5, 27, turnCounter);
 }
 
 void Field::setScreen(const ScreenSize* screen) {

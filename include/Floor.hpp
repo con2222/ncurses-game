@@ -4,6 +4,7 @@
 
 class Floor : public Entity {
     char sprite = FLOOR;
+    
 public:
     Floor(int x, int y);
     virtual void draw() const;

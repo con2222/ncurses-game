@@ -14,6 +14,7 @@ public:
     int attack();
     void move(std::vector<std::vector<Ceil>>& ceils, const ScreenSize* screen, int newX, int newY, int height, int width);
     bool isPassable(const std::vector<std::vector<Ceil>>& ceils, const ScreenSize* screen, int nx, int ny, int height, int width) const;
+
 private:
     int damage;
     char sprite;
