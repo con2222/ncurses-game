@@ -24,14 +24,19 @@ sudo apt install libncurses5-dev libncursesw5-dev
 ```
 
 # Create build directory
+```bash
 mkdir build
 cd build
-
+```
 # Configure with CMake
+```bash
 cmake ..
-
+```
 # Build the project
+```bash
 make
-
+```
 # Run the game
+```bash
 ./main
+```
