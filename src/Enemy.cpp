@@ -1,19 +1,12 @@
 #include <Enemy.hpp>
 #include <Floor.hpp>
-#include <Color.hpp>
 #include <BattleLogic.hpp>
 #include <Constants.hpp>
 #include <cmath>
 
 Enemy::Enemy(int x, int y) : LivingEntity(x, y, Entity::Type::ENEMY, EN_HEALTH), damage(EN_DAMAGE), sprite(ENEMY) {}
 
-void Enemy::move(
-    std::vector<std::vector<Ceil>>& ceils,
-    const ScreenSize* screen,
-    int newX, int newY,
-    int height, int width)
-{
-
+void Enemy::move(std::vector<std::vector<Ceil>>& ceils, const ScreenSize* screen, int newX, int newY, int height, int width) {
     int oldIdxY = y - screen->yMax / 2 + height / 2;
     int oldIdxX = x - screen->xMax / 2 + width / 2;
     ceils[oldIdxY][oldIdxX].setEntity(std::make_shared<Floor>(x, y));
@@ -26,13 +19,7 @@ void Enemy::move(
     ceils[newIdxY][newIdxX].setEntity(shared_from_this());
 }
 
-bool Enemy::isPassable(
-    const std::vector<std::vector<Ceil>>& ceils,
-    const ScreenSize* screen,
-    int nx, int ny,
-    int height, int width
-) const {
-
+bool Enemy::isPassable(const std::vector<std::vector<Ceil>>& ceils, const ScreenSize* screen, int nx, int ny, int height, int width) const {
     int idxY = ny - screen->yMax / 2 + height / 2;
     int idxX = nx - screen->xMax / 2 + width / 2;
 
@@ -93,9 +80,7 @@ void Enemy::update(std::vector<std::vector<Ceil>>& ceils, const ScreenSize* scre
 }
 
 void Enemy::draw() const {
-    attron(COLOR_PAIR(static_cast<int>(ColorPair::ENEMY)));
     mvaddch(y, x, sprite);
-    attroff(COLOR_PAIR(static_cast<int>(ColorPair::ENEMY)));
 }
 
 void Enemy::takeDamage(int amount) {

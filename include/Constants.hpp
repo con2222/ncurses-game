@@ -1,43 +1,45 @@
 #pragma once
 
-constexpr size_t FIELD_WIDTH = 20;
-constexpr size_t FIELD_HEIGHT = 10;
+constexpr const size_t FIELD_WIDTH = 20;
+constexpr const size_t FIELD_HEIGHT = 10;
 
-constexpr int DOWN = 258;
-constexpr int UP = 259;
-constexpr int LEFT = 260;
-constexpr int RIGHT = 261;
-constexpr int ENTER = '\n';
-constexpr int SPACE = ' ';
-constexpr int TAB = 9;
+constexpr const int DOWN = 258;
+constexpr const int UP = 259;
+constexpr const int LEFT = 260;
+constexpr const int RIGHT = 261;
+constexpr const int ENTER = '\n';
+constexpr const int SPACE = ' ';
+constexpr const int TAB = 9;
 
-constexpr char FLOOR = ' ';
-constexpr char WALL = '#';
-constexpr char PLAYER = 'K';
-constexpr char ENEMY = 'X';
-constexpr char ENEMY_BASE = 'B';
-constexpr char SPIKED_TRAP = '^';
+constexpr const char FLOOR = ' ';
+constexpr const char WALL = '#';
+constexpr const char PLAYER = 'K';
+constexpr const char ENEMY = 'X';
+constexpr const char ENEMY_BASE = 'B';
+constexpr const char SPIKED_TRAP = '^';
 
-constexpr int PL_HEALTH = 1;
-constexpr int MELEE_MODE = 0;
-constexpr int MELEE_DAMAGE = 5;
-constexpr int RANGE_MODE = 1;
-constexpr int RANGE_DAMAGE = 10;
+constexpr const int PL_HEALTH = 1;
+constexpr const int MELEE_MODE = 0;
+constexpr const int MELEE_DAMAGE = 5;
+constexpr const int RANGE_MODE = 1;
+constexpr const int RANGE_DAMAGE = 10;
 
-constexpr int EN_BASE_HP = 10;
-constexpr int EN_HEALTH = 20;
-constexpr int EN_DAMAGE = 500;
+constexpr const int EN_BASE_HP = 10;
+constexpr const int EN_HEALTH = 20;
+constexpr const int EN_DAMAGE = 500;
 
-constexpr int WALLS_COUNT = 10;
+constexpr const int WALLS_COUNT = 10;
 
-constexpr int SPAWN_COOLDOWN = 5;
+constexpr const int SPAWN_COOLDOWN = 5;
 
-constexpr int PLAYER_X_OFFSET = -50;
-constexpr int ENEMY_X_OFFSET  = 13;
-constexpr int BATTLE_Y_OFFSET = -15;
+constexpr const int PLAYER_X_OFFSET = -50;
+constexpr const int ENEMY_X_OFFSET  = 13;
+constexpr const int BATTLE_Y_OFFSET = -15;
 
-constexpr int PLAYER_TURN_X_OFFSET = 26;
-constexpr int ENEMY_TURN_X_OFFSET  = 24;
+constexpr const int PLAYER_TURN_X_OFFSET = 26;
+constexpr const int ENEMY_TURN_X_OFFSET  = 24;
+
+constexpr const int TIME_BETWEEN_ANIMATIONS = 1000; 
 
 //BattleLogic.cpp
 constexpr const char* KNIGHT_MELEE_BATTLE = "../assets/knight/inBattle.txt";
@@ -57,6 +59,8 @@ constexpr const char* GOBLIN_ATTACK2 = "../assets/enemy/goblinAttack2.txt";
 
 constexpr const char* PLAYER_TURN_TXT = "../assets/battle/playerTurn.txt";
 constexpr const char* ENEMY_TURN_TXT = "../assets/battle/enemyTurn.txt";
+
+constexpr const int BLOCK_WINDOW_MS = 300;
 
 //Menu.cpp
 constexpr const char* START_BUTTON = "../assets/menu/start.txt";

@@ -1,6 +1,5 @@
 #include <Field.hpp>
 #include <ncurses.h>
-#include <Color.hpp>
 #include <Constants.hpp>
 #include <Wall.hpp>
 #include <Floor.hpp>

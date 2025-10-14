@@ -1,6 +1,5 @@
 #include <Game.hpp>
 #include <Constants.hpp>
-#include <Color.hpp>
 #include <Wall.hpp>
 #include <Floor.hpp>
 #include <Menu.hpp>
@@ -13,9 +12,7 @@ void Game::initScreen() {
     cbreak();
     noecho();
     curs_set(0);
-    start_color();
     keypad(stdscr, TRUE);
-    initGameColors();
 
     int yMax, xMax;
     getmaxyx(stdscr, yMax, xMax);

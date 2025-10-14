@@ -2,7 +2,6 @@
 #include <Constants.hpp>
 #include <string>
 #include <Entity.hpp>
-#include <Color.hpp>
 #include <memory>
 #include <Floor.hpp>
 #include <BattleLogic.hpp>

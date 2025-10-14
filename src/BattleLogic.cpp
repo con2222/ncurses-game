@@ -1,7 +1,6 @@
 #include <BattleLogic.hpp>
 #include <Utils.hpp>
 #include <Constants.hpp>
-#include <Color.hpp>
 #include <Floor.hpp>
 #include <ncurses.h>
 #include <Window.hpp>
@@ -11,23 +10,23 @@ void playPlayerAttackAnimation(int y, int x, std::shared_ptr<Player> player) {
     if (player->getMode() == MELEE_MODE) {
         printMultiline(y, x, readFileToString(KNIGHT_ATTACK1));
         refresh();
-        napms(1000);
+        napms(TIME_BETWEEN_ANIMATIONS);
 
         printMultiline(y, x, readFileToString(KNIGHT_ATTACK2));
         refresh();
-        napms(1000);
+        napms(TIME_BETWEEN_ANIMATIONS);
 
         printMultiline(y, x, readFileToString(KNIGHT_ATTACK3));
         refresh();
-        napms(1000);
+        napms(TIME_BETWEEN_ANIMATIONS);
     } else {
         printMultiline(y, x, readFileToString(KNIGHT_SHOOT1));
         refresh();
-        napms(1000);
+        napms(TIME_BETWEEN_ANIMATIONS);
 
         printMultiline(y, x, readFileToString(KNIGHT_SHOOT2));
         refresh();
-        napms(1000);
+        napms(TIME_BETWEEN_ANIMATIONS);
     }
 }
 
@@ -40,7 +39,6 @@ bool playEnemyAttackAnimation(const ScreenSize* screen, int y, int x, std::share
         refresh();
         nodelay(stdscr, TRUE);
         auto start_time = std::chrono::steady_clock::now();
-        const int BLOCK_WINDOW_MS = 1000;
 
         while (true) {
             auto now = std::chrono::steady_clock::now();
@@ -56,7 +54,7 @@ bool playEnemyAttackAnimation(const ScreenSize* screen, int y, int x, std::share
                                screen->xMax / 2 + PLAYER_X_OFFSET, 
                                readFileToString(KNIGHT_BLOCK));
                 refresh();
-                napms(1000);
+                napms(TIME_BETWEEN_ANIMATIONS);
                 break;
             }
             napms(10); 
@@ -64,7 +62,7 @@ bool playEnemyAttackAnimation(const ScreenSize* screen, int y, int x, std::share
     } else {
         printMultiline(y, x, readFileToString(GOBLIN_ATTACK1));
         refresh();
-        napms(1000);
+        napms(BLOCK_WINDOW_MS);
     }
 
     int block_y = y - 2;
@@ -77,7 +75,7 @@ bool playEnemyAttackAnimation(const ScreenSize* screen, int y, int x, std::share
 
     printMultiline(y, x, readFileToString(GOBLIN_ATTACK2));
     refresh();
-    napms(1000);
+    napms(TIME_BETWEEN_ANIMATIONS);
 
     nodelay(stdscr, FALSE);
     return blocked;
@@ -126,7 +124,7 @@ BattleTurn handlePlayerTurn(const ScreenSize* screen, std::shared_ptr<Player> pl
             break;
         case ENTER:
             if (options[selected_option] == "Attack") {
-                napms(1000);
+                napms(TIME_BETWEEN_ANIMATIONS);
                 playPlayerAttackAnimation(screen->yMax / 2 - 15, screen->xMax / 2 - 50, player);
 
                 int damage = player->attack();

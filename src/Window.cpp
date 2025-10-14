@@ -1,5 +1,4 @@
 #include <Window.hpp>
-#include <Color.hpp>
 
 void draw_player_bar(WINDOW* pl_bar, WINDOW* en_bar, WINDOW* act_bar, int width) {
     wborder(pl_bar, '|', '|', '=', '=', '#', '#', '#', '#');
@@ -15,12 +14,7 @@ void draw_player_bar(WINDOW* pl_bar, WINDOW* en_bar, WINDOW* act_bar, int width)
     wborder(act_bar, '|', '|', '-', '-', '+', '+', '+', '+');
 }
 
-void update_battle_windows(
-    WINDOW* pl_bar, WINDOW* en_bar, WINDOW* act_bar,
-    std::shared_ptr<Player> player, std::shared_ptr<Enemy> enemy,
-    const std::vector<std::string>& options, int selected_option,
-    BattleTurn turn, int width)
-{
+void update_battle_windows(WINDOW* pl_bar, WINDOW* en_bar, WINDOW* act_bar, std::shared_ptr<Player> player, std::shared_ptr<Enemy> enemy, const std::vector<std::string>& options, int selected_option, BattleTurn turn, int width) {
     werase(pl_bar);
     werase(en_bar);
     werase(act_bar);
@@ -42,9 +36,7 @@ void update_battle_windows(
 
     for (int i = 0; i < options.size(); i++) {
         if (selected_option == i) {
-            wattron(act_bar, COLOR_PAIR(static_cast<int>(ColorPair::BATTLE_BUTTON)));
             mvwprintw(act_bar, 1 + i, width / 6 / 4, "%s", options[i].c_str());
-            wattroff(act_bar, COLOR_PAIR(static_cast<int>(ColorPair::BATTLE_BUTTON)));
         } else {
             mvwprintw(act_bar, 1 + i, width / 6 / 4, "%s", options[i].c_str());
         }

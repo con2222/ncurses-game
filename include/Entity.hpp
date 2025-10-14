@@ -12,7 +12,9 @@ public:
         ENEMY_BASE,
         SPIKED_TRAP,
     };
+    
     Entity(int x, int y, Type type);
+
     int getY() const;
     int getX() const;
     void setX(int);
@@ -20,8 +22,6 @@ public:
     virtual void draw() const = 0;
     virtual int getHealth() const;
     Entity::Type getType() const;
-    //virtual int getSymbol() override = 0;
-
     virtual ~Entity() = default;
 protected:
     int x;

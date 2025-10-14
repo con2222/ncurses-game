@@ -11,7 +11,6 @@ add_executable(main
     src/Field.cpp
     src/Game.cpp
     src/Ceil.cpp
-    src/Color.cpp
     src/Wall.cpp
     src/Floor.cpp
     src/Entity.cpp
