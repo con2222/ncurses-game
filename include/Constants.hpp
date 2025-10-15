@@ -18,15 +18,15 @@ constexpr const char ENEMY = 'X';
 constexpr const char ENEMY_BASE = 'B';
 constexpr const char SPIKED_TRAP = '^';
 
-constexpr const int PL_HEALTH = 1;
+constexpr const int PL_HEALTH = 10;
 constexpr const int MELEE_MODE = 0;
-constexpr const int MELEE_DAMAGE = 5;
+constexpr const int MELEE_DAMAGE = 7;
 constexpr const int RANGE_MODE = 1;
-constexpr const int RANGE_DAMAGE = 10;
+constexpr const int RANGE_DAMAGE = 15;
 
 constexpr const int EN_BASE_HP = 10;
 constexpr const int EN_HEALTH = 20;
-constexpr const int EN_DAMAGE = 500;
+constexpr const int EN_DAMAGE = 5;
 
 constexpr const int WALLS_COUNT = 10;
 
