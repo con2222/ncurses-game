@@ -11,7 +11,7 @@
 
 Field::Field() : screen(nullptr), width(FIELD_WIDTH), height(FIELD_HEIGHT) {
     ceils.resize(height);
-
+    turnCounter = 0;
     for (int i = 0; i < height; ++i) {
         ceils[i].resize(width);
 
